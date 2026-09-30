@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfolio da dupla de vôlei de praia Gabi & Manu, de Sete Lagoas (MG): Nº 1 de Minas Gerais no Sub-15 e representantes de MG no Campeonato Brasileiro Sub-17.">
+<meta property="og:title" content="Gabi & Manu · Portfolio 2026">
+<meta property="og:description" content="Nº 1 de Minas Gerais no Sub-15 e representantes de MG no Brasileiro Sub-17 de vôlei de praia.">
+<meta property="og:image" content="fotos/capa-dupla.jpg">
+<title>Gabi & Manu Portfolio</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+/* Layout: seções como pranchas de apresentação — gradientes lilás/violeta, painéis pretos arredondados, fundo claro lilás */
+:root{
+  color-scheme:light;
+  --paper:#F4F2F7; --card:#FFFFFF; --ink:#0E0C14; --ink-2:#17141F; --mute:#6D6878; --line:rgba(14,12,20,.14);
+  --lilac:#B98CC6; --lilac-2:#D9BFE0; --violet:#7B6CB4; --indigo:#474A92; --blush:#E4A8C8; --mist:#8A90A6; --slate:#4C5470;
+  --g-hero:linear-gradient(115deg,#FFFFFF 18%,#E6D4EA 40%,#C29BCD 62%,#A07CBC 100%);
+  --g-deep:linear-gradient(180deg,#9377B8 0%,#6A63AA 55%,#4A4D95 100%);
+  --g-mist:radial-gradient(120% 90% at 50% 62%,#4C5470 0%,#7E869E 30%,#C9CAD6 58%,#F1EFF4 80%);
+  --g-text:linear-gradient(100deg,#C79BD3,#8F7CC6 55%,#5B5FB0);
+  --f:'Inter Tight','Helvetica Neue',Arial,sans-serif;
+  --w:1320px; --g:clamp(16px,3vw,44px); --r:clamp(22px,3vw,40px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--f);background:var(--paper);color:var(--ink);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--w);margin:0 auto;padding-inline:var(--g)}
+.cover{width:100%;height:100%;object-fit:cover}
+h1,h2,h3{font-weight:600;letter-spacing:-.045em;line-height:.95;text-wrap:balance}
+.h2{font-size:clamp(40px,5.6vw,84px)}
+.h3{font-size:clamp(20px,1.8vw,24px);letter-spacing:-.03em;font-weight:600}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.body{font-size:15px;line-height:1.6}
+.dim{opacity:.72}
+.tick{display:block;width:34px;height:2px;border-radius:2px;background:var(--g-text);margin-bottom:10px}
+.gt{padding-inline:.08em;margin-inline:-.08em;background:var(--g-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+.panel{background:var(--ink);color:#fff;border-radius:var(--r);overflow:hidden;position:relative}
+section{position:relative}
+
+/* ---------- animação ---------- */
+.anim [data-a]{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.anim [data-a="img"]{opacity:1;transform:none;clip-path:inset(12% 12% 12% 12% round 24px);transition:clip-path 1.3s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.anim [data-a="img"] img,.anim [data-a="img"] video{transform-origin:50% 15%;transform:scale(1.18);transition:transform 1.6s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.anim [data-a].in{opacity:1;transform:none}
+.anim [data-a="img"].in{clip-path:inset(0 0 0 0 round 0)}
+.anim [data-a="img"].in img,.anim [data-a="img"].in video{transform:scale(1)}
+.split .ch{display:inline-block;opacity:0;transform:translateY(60%);filter:blur(6px);transition:transform 1s cubic-bezier(.2,.8,.2,1),opacity .8s ease,filter .8s ease;transition-delay:calc(var(--i)*45ms + .15s)}
+.split .ln{display:inline-block;vertical-align:bottom;padding:.06em .1em .2em;margin:-.06em -.03em -.2em}
+.split.in .ch{transform:none;opacity:1;filter:none}
+@keyframes drift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(var(--rot,0deg))}50%{transform:translateY(-10px) rotate(var(--rot,0deg))}}
+@media (prefers-reduced-motion:reduce){
+  .anim [data-a],.anim [data-a="img"]{opacity:1;transform:none;clip-path:none;transition:none}
+  .anim [data-a="img"] img,.anim [data-a="img"] video{transform:none}
+  .split .ch{transform:none;opacity:1;filter:none;transition:none}
+  .capa,.float{animation:none!important}
+}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:80;display:flex;gap:2px;background:rgba(14,12,20,.82);backdrop-filter:blur(10px);padding:5px;border-radius:40px;max-width:calc(100% - 24px)}
+.nav a{color:#fff;font-size:12px;font-weight:600;letter-spacing:.03em;padding:9px 14px;border-radius:30px;white-space:nowrap}
+.nav a:hover,.nav a:focus-visible{background:rgba(255,255,255,.14);outline:none}
+.nav a.cta{background:var(--g-text);color:#fff}
+
+/* ---------- 01 capa ---------- */
+.capa{background:var(--g-hero);background-size:180% 180%;animation:drift 18s ease-in-out infinite;padding-block:96px 60px}
+.capa .top{display:grid;grid-template-columns:1fr auto 1fr;gap:var(--g);align-items:start}
+.capa .top .r{text-align:right;justify-self:end;color:#fff}
+.capa .top .r .tick{margin-left:auto}
+.capa .top p{font-size:14px;line-height:1.35;max-width:240px}
+.logo{font-weight:700;letter-spacing:-.07em;line-height:.8;font-size:clamp(64px,11vw,176px);text-align:center;white-space:nowrap}
+.logo .amp{font-weight:300}
+.capa .sub{text-align:center;margin-top:18px;white-space:nowrap}
+.capa .panel{margin-top:clamp(40px,6vw,80px);min-height:560px;display:grid;grid-template-columns:1fr 1.25fr 1fr;align-items:center;gap:var(--g);padding:clamp(28px,4vw,60px)}
+.capa .panel::before{content:"";position:absolute;inset:-30% -10% auto 20%;height:120%;background:radial-gradient(closest-side,rgba(185,140,198,.38),transparent 70%);pointer-events:none}
+.capa .txt{position:relative;z-index:2;max-width:250px}
+.capa .txt.r{justify-self:end;text-align:right}
+.capa .txt.r .tick{margin-left:auto}
+.capa .txt .h3{font-weight:500;font-size:19px;margin-bottom:10px}
+.capa .txt p{font-size:13px;line-height:1.6;color:rgba(255,255,255,.7)}
+.stage{position:relative;z-index:1;height:clamp(380px,40vw,520px)}
+.stage .ph{position:absolute;left:4%;top:4%;width:62%;height:92%;border-radius:18px;overflow:hidden;--rot:-5deg;transform:rotate(-5deg);box-shadow:0 40px 80px -30px rgba(0,0,0,.8)}
+.stage .vd{position:absolute;right:2%;bottom:0;width:42%;aspect-ratio:9/16;border-radius:16px;overflow:hidden;--rot:4deg;transform:rotate(4deg);box-shadow:0 40px 80px -30px rgba(0,0,0,.8);border:3px solid rgba(255,255,255,.9)}
+.float{animation:floaty 7s ease-in-out infinite}
+.stage .vd.float{animation-delay:-3s}
+.chip{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.92);color:var(--ink);font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-radius:30px}
+.chip i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#E0457B;margin-right:6px;vertical-align:1px;animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.2}}
+
+
+/* fotos fantasmas no fundo da capa */
+.ghosts{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.ghosts img{position:absolute;object-fit:cover;border-radius:18px;opacity:0;filter:blur(10px) saturate(1.1);animation:ghost var(--t,8s) ease-in-out infinite;animation-delay:var(--dl,0s);will-change:opacity,transform}
+@keyframes ghost{0%{opacity:0;transform:scale(1.08) rotate(var(--r,0deg)) translateY(12px)}35%,60%{opacity:var(--o,.32);transform:scale(1) rotate(var(--r,0deg))}100%{opacity:0;transform:scale(.96) rotate(var(--r,0deg)) translateY(-12px)}}
+.ghosts::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,12,20,.78) 0%,rgba(14,12,20,.2) 30%,rgba(14,12,20,.2) 70%,rgba(14,12,20,.78) 100%)}
+@media (prefers-reduced-motion:reduce){.ghosts{display:none}}
+
+/* ---------- 02 fundamentos ---------- */
+.fund{background:var(--g-deep);color:#fff;padding-block:clamp(70px,9vw,130px)}
+.fund .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,80px);align-items:start}
+.fund .card{background:var(--card);border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;max-width:100%;position:relative}
+.fund .card .over{position:absolute;left:18px;bottom:18px;right:18px;color:var(--ink);display:flex;justify-content:space-between;z-index:2}
+.fund .card .over span{background:rgba(255,255,255,.9);padding:6px 10px;border-radius:30px}
+.fund .h2{color:#15122A;margin-bottom:34px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:34px 44px}
+.cols p{font-size:15px;line-height:1.6;color:rgba(255,255,255,.82);margin-top:14px}
+.cols .h3{color:#fff}
+.atl{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:64px}
+.atl article{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:start}
+.atl .face{aspect-ratio:3/4;border-radius:16px;overflow:hidden}
+.atl .face img{object-position:50% 20%}
+.atl h3{font-size:44px;font-weight:600;color:#15122A;letter-spacing:-.06em}
+.atl .full{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.75);margin:4px 0 12px}
+.atl dl{display:grid;gap:6px;font-size:13px}
+.atl dl div{display:flex;justify-content:space-between;gap:10px;border-top:1px solid rgba(255,255,255,.22);padding-top:6px}
+.atl dt{color:rgba(255,255,255,.7)}
+.atl dd{font-weight:600;text-align:right}
+
+/* ---------- 03 números ---------- */
+.nums-sec{padding-block:clamp(40px,6vw,80px)}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);padding:clamp(28px,4vw,56px)}
+.nums div{padding:0 22px;border-left:1px solid rgba(255,255,255,.14)}
+.nums div:first-child{border-left:0;padding-left:0}
+.nums b{display:block;font-weight:300;letter-spacing:-.07em;font-size:clamp(64px,8vw,132px);line-height:.9;font-variant-numeric:tabular-nums}
+.nums span{display:block;margin-top:12px;color:rgba(255,255,255,.7)}
+
+/* ---------- 04 timeline ---------- */
+.tl-sec{background:radial-gradient(90% 55% at 50% 100%,rgba(228,168,200,.5),transparent 70%),linear-gradient(180deg,#A3A7BA 0%,#5E6582 34%,#3A4060 100%);padding-block:clamp(70px,9vw,130px);overflow:hidden}
+.tl-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
+.tl-head .h2{color:#1C2034}
+.tl-head .h2 span{font-weight:300}
+.tl-head p{max-width:320px;color:#1C2034;font-size:14px}
+.tl{position:relative;height:580px;margin-top:10px}
+.tl svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.tl svg path{fill:none;stroke:#fff;stroke-width:2;vector-effect:non-scaling-stroke}
+.tl svg path.bg{stroke:rgba(255,255,255,.28)}
+.ev{position:absolute;width:calc(100%/6 - 16px);opacity:.0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.ev.on{opacity:1;transform:none}
+.no-anim .ev{opacity:1;transform:none}
+.ev .dot{position:absolute;left:0;top:0;transform:translate(-50%,-50%) scale(.3);width:30px;height:30px;border-radius:50%;background:#fff;color:var(--ink);font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;transition:transform .5s cubic-bezier(.3,1.6,.5,1);box-shadow:0 0 0 6px rgba(255,255,255,.18)}
+.ev.on .dot,.no-anim .ev .dot{transform:translate(-50%,-50%) scale(1)}
+.ev.next .dot{background:var(--g-text);color:#fff}
+.ev .top{position:absolute;left:-4px;top:30px;width:100%;color:#fff}
+.ev .bot{margin-top:12px}
+.ev .pos{font-weight:300;letter-spacing:-.06em;font-size:46px;line-height:.9}
+.ev .ttl{font-size:14px;font-weight:700;letter-spacing:-.01em;line-height:1.2;margin-top:6px}
+.ev .lbl{margin-top:6px;opacity:.85}
+.ev .bot p{font-size:13px;line-height:1.5;color:#fff;opacity:.9;max-width:210px}
+
+/* ---------- 05 vídeos ---------- */
+.vsec{padding-block:clamp(70px,9vw,120px)}
+.vsec .panel{padding:clamp(24px,4vw,56px)}
+.vsec .panel::after{content:"";position:absolute;right:-10%;top:-40%;width:60%;height:120%;background:radial-gradient(closest-side,rgba(123,108,180,.45),transparent);pointer-events:none}
+.vhead{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.vhead p{color:rgba(255,255,255,.6);font-size:13px}
+.vgrid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.vc{position:relative;aspect-ratio:9/16;overflow:hidden;background:#000;border-radius:16px;cursor:pointer;max-width:100%}
+.vc.wide{aspect-ratio:16/9}
+.vc video{width:100%;height:100%;object-fit:cover}
+.vc .ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:12px;color:#fff;background:linear-gradient(180deg,rgba(0,0,0,.4),transparent 30%,transparent 60%,rgba(0,0,0,.55));transition:opacity .25s}
+.vc .ov .lbl{font-size:10px}
+.vc .play{width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;transition:transform .25s}
+.vc:hover .play{transform:scale(1.1)}
+.vc .play svg{width:16px;height:16px;margin-left:3px;fill:var(--ink)}
+.vc.on .ov{opacity:0;pointer-events:none}
+.vc:focus-visible{outline:3px solid var(--lilac);outline-offset:3px}
+
+/* ---------- 06 premiações ---------- */
+.prem{background:var(--g-deep);color:#fff;padding-block:clamp(70px,9vw,130px)}
+.prem .h2{color:#15122A}
+.prem .intro{display:grid;grid-template-columns:1fr 1fr;gap:var(--g);align-items:end;margin-bottom:40px}
+.prem .intro p{color:rgba(255,255,255,.85);max-width:440px;justify-self:end}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.pgrid .wide{grid-column:span 2}
+.pgrid .vc{border-radius:18px}
+
+/* ---------- 07 saquarema ---------- */
+.br{padding-block:clamp(60px,8vw,110px)}
+.br .panel{padding:clamp(28px,5vw,70px);min-height:520px;display:flex;flex-direction:column;justify-content:space-between}
+.br .panel::before{content:"";position:absolute;left:-20%;bottom:-60%;width:90%;height:130%;background:radial-gradient(closest-side,rgba(228,168,200,.35),transparent);pointer-events:none}
+.br .panel::after{content:"";position:absolute;right:-10%;top:-50%;width:70%;height:120%;background:radial-gradient(closest-side,rgba(123,108,180,.5),transparent);pointer-events:none}
+.br .big{position:relative;z-index:1;font-weight:700;letter-spacing:-.075em;line-height:.8;font-size:clamp(56px,12.5vw,200px);white-space:nowrap}
+.br .grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--g);margin-top:40px}
+.br p{color:rgba(255,255,255,.72);font-size:14px}
+.br ul{list-style:none}
+.br li{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.18);font-size:14px;font-weight:500}
+.br li span{opacity:.5;font-variant-numeric:tabular-nums}
+
+/* ---------- 08 estrutura ---------- */
+.est{padding-block:clamp(40px,6vw,90px)}
+.est .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);align-items:center}
+.est .ph{aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;max-width:100%}
+.team{margin-top:34px;border-top:1px solid var(--line)}
+.team div{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.team b{font-weight:600;letter-spacing:-.03em;font-size:22px}
+.team span{color:var(--mute)}
+.est .body{color:var(--mute);margin-top:18px;max-width:460px}
+
+/* ---------- 09 patrocínio ---------- */
+.pat{background:var(--g-hero);padding-block:clamp(70px,9vw,130px)}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--g);margin-top:50px}
+.why .n{font-weight:300;letter-spacing:-.08em;font-size:clamp(80px,9vw,150px);line-height:.8;margin-bottom:18px}
+.why .h3{margin-bottom:8px}
+.why p{color:#3E3850;font-size:14px}
+.cotas{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:70px}
+.cota{background:rgba(255,255,255,.78);backdrop-filter:blur(6px);border-radius:26px;padding:30px;transition:transform .3s}
+.cota:hover{transform:translateY(-6px)}
+.cota.top{background:var(--ink);color:#fff}
+.cota h3{font-size:34px}
+.cota .lbl{margin:10px 0 20px;opacity:.6}
+.cota ul{list-style:none;display:grid;gap:9px;font-size:14px}
+.cota li{display:flex;gap:10px}
+.cota li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--violet);margin-top:8px}
+.cota.top li::before{background:var(--lilac)}
+
+/* ---------- 10 galeria ---------- */
+.gal-sec{padding-block:clamp(70px,9vw,120px)}
+.gal{columns:4 230px;column-gap:12px;margin-top:40px}
+.gal figure{break-inside:avoid;margin:0 0 12px;position:relative;border-radius:18px;overflow:hidden}
+.gal img{width:100%;transition:transform .8s}
+.gal figure:hover img{transform:scale(1.04)}
+.gal figcaption{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.9);padding:5px 10px;border-radius:30px;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+
+/* ---------- 11 contato ---------- */
+.end{background:var(--g-mist);padding-block:clamp(60px,8vw,110px)}
+.end .panel{padding:clamp(30px,5vw,70px);text-align:center}
+.end .panel::before{content:"";position:absolute;left:50%;top:-40%;width:80%;height:110%;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(185,140,198,.42),transparent);pointer-events:none}
+.end .big{position:relative;font-weight:700;letter-spacing:-.075em;line-height:.82;font-size:clamp(46px,8.6vw,150px)}
+.end p{position:relative;color:rgba(255,255,255,.7);max-width:440px;margin:26px auto 30px}
+.btns{position:relative;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:40px;border:1px solid rgba(255,255,255,.35);font-size:13px;font-weight:600}
+.btn.w{background:#fff;color:var(--ink);border-color:#fff}
+.btn svg{width:17px;height:17px}
+.end .contacts{position:relative;margin-top:26px;font-size:13px;color:rgba(255,255,255,.6);user-select:all}
+footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:28px;color:#2F3550}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1000px){
+  .nav a.hide-m{display:none}
+  .capa .top{grid-template-columns:1fr 1fr}
+  .capa .top .logo-wrap{grid-column:1/-1;grid-row:1}
+  .capa .panel{grid-template-columns:1fr;min-height:0}
+  .capa .txt,.capa .txt.r{justify-self:start;text-align:left;max-width:none}
+  .capa .txt.r .tick{margin-left:0}
+  .fund .grid,.est .grid,.prem .intro{grid-template-columns:1fr}
+  .prem .intro p{justify-self:start}
+  .fund .card{max-width:520px}
+  .atl{grid-template-columns:1fr}
+  .nums{grid-template-columns:1fr 1fr;gap:30px 0}
+  .nums div:nth-child(3){border-left:0;padding-left:0}
+  .tl{height:auto}
+  .tl svg{display:none}
+  .evs{position:relative;display:grid;gap:34px;padding:6px 0 6px 40px}
+  .evs::before{content:"";position:absolute;left:14px;top:0;bottom:0;width:2px;background:rgba(255,255,255,.3)}
+  .evs .prog{position:absolute;left:14px;top:0;width:2px;background:#fff;height:var(--p,0%)}
+  .ev{position:relative!important;left:auto!important;top:auto!important;width:auto}
+  .ev .dot{left:-26px;top:18px}
+  .ev .top,.ev .bot{position:static;width:auto}
+  .ev .bot{margin-top:6px}
+  .vgrid,.pgrid{grid-template-columns:1fr 1fr}
+  .br .grid,.why,.cotas{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .capa .sub{white-space:normal;line-height:1.6}
+  .capa .top .r{color:var(--ink)}
+  .capa{padding-block:84px 40px}
+  .logo{font-size:21vw;white-space:normal}
+  .capa .top{grid-template-columns:1fr}
+  .capa .top .r{justify-self:start;text-align:left}
+  .capa .top .r .tick{margin-left:0}
+  .stage .ph{width:70%}
+  .stage .vd{width:46%}
+  .cols{grid-template-columns:1fr}
+  .atl article{grid-template-columns:96px 1fr}
+  .br .big{font-size:14.5vw}
+  .pgrid .wide{grid-column:1/-1}
+}
+</style>
+</head>
+<body>
+
+
+<nav class="nav" aria-label="Seções">
+  <a href="#topo">G&amp;M</a>
+  <a href="#dupla" class="hide-m">A dupla</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#videos" class="hide-m">Vídeos</a>
+  <a href="#premiacoes" class="hide-m">Premiações</a>
+  <a href="#contato" class="cta">Seja parceiro</a>
+</nav>
+
+<!-- 01 CAPA -->
+<header class="capa" id="topo">
+  <div class="wrap">
+    <div class="top">
+      <div data-a><span class="tick"></span><p>Nº 1 de Minas Gerais.<br>Rumo ao Brasileiro Sub-17.</p></div>
+      <div class="logo-wrap"><h1 class="logo split" id="logo">Gabi <span class="amp gt">&amp;</span> Manu</h1><p class="sub lbl" data-a style="--d:.9s">Vôlei de praia · Sete Lagoas, MG · Portfolio 2026</p></div>
+      <div class="r" data-a style="--d:.2s"><span class="tick"></span><p>Arena MVP ·<br>Associação Transformar</p></div>
+    </div>
+
+    <div class="panel" data-a style="--d:.4s">
+      <div class="ghosts" id="ghosts" aria-hidden="true"></div>
+      <div class="txt" data-a style="--d:.9s"><span class="tick"></span><h3 class="h3">Sobre a dupla</h3><p>Gabi, 14 anos, e Manu, 13, são de Sete Lagoas e chegaram ao topo do vôlei de praia mineiro ainda na base.</p></div>
+      <div class="stage">
+        <div class="ph float"><img class="cover" src="fotos/capa-dupla.jpg" alt="Gabi e Manu na areia com uniforme amarelo e bola de jogo"></div>
+        <div class="vd float"><video class="cover" src="videos/hero.mp4" poster="videos/hero.jpg" autoplay muted loop playsinline></video><span class="chip"><i></i>Em jogo</span></div>
+      </div>
+      <div class="txt r" data-a style="--d:1.05s"><span class="tick"></span><h3 class="h3">A temporada</h3><p>Campeãs do Circuito Mineiro Sub-15 e da Seletiva Mineira Sub-17. Agora representam Minas Gerais em Saquarema.</p></div>
+    </div>
+  </div>
+</header>
+
+<!-- 02 FUNDAMENTOS + ATLETAS -->
+<section class="fund" id="dupla">
+  <div class="wrap grid">
+    <div class="card" data-a="img"><img class="cover" src="fotos/dupla-hero.jpg" alt="Gabi e Manu na areia do Circuito Mineiro" style="object-position:50% 12%"><div class="over lbl"><span>Circuito Mineiro</span><span>Abr 2026</span></div></div>
+    <div>
+      <h2 class="h2" data-a>Quem são</h2>
+      <div class="cols">
+        <div data-a><h3 class="h3">A dupla</h3><p>Duas atletas de Sete Lagoas que se destacam no vôlei de praia e de quadra, com títulos municipais, estaduais e regionais.</p></div>
+        <div data-a style="--d:.1s"><h3 class="h3">A parceria</h3><p>Sintonia, disciplina e vontade de vencer. Juntas, cada uma potencializa as qualidades da outra dentro de quadra.</p></div>
+        <div data-a style="--d:.2s"><h3 class="h3">Onde treinam</h3><p>Projeto de Treinamento de Alto Rendimento da Associação Transformar, na Arena MVP, com treinador, preparador físico e psicóloga.</p></div>
+        <div data-a style="--d:.3s"><h3 class="h3">O próximo passo</h3><p>Representar Minas Gerais como dupla nº 1 no Campeonato Brasileiro Sub-17, em Saquarema (RJ).</p></div>
+      </div>
+      <div class="atl">
+        <article data-a>
+          <div class="face"><img class="cover" src="fotos/gabi.jpg" alt="Gabi"></div>
+          <div><h3>Gabi</h3><div class="full">Gabriela Verdolin Cabral</div>
+            <dl><div><dt>Idade</dt><dd>14 anos</dd></div><div><dt>Na areia desde</dt><dd>Abr 2022</dd></div><div><dt>Formação</dt><dd>Arena MVP</dd></div></dl></div>
+        </article>
+        <article data-a style="--d:.15s">
+          <div class="face"><img class="cover" src="fotos/manu.jpg" alt="Manu"></div>
+          <div><h3>Manu</h3><div class="full">Manuela Bruno Valadares</div>
+            <dl><div><dt>Idade</dt><dd>13 anos</dd></div><div><dt>Na areia desde</dt><dd>Fev 2025</dd></div><div><dt>Formação</dt><dd>Arena MVP</dd></div></dl></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 NÚMEROS -->
+<section class="nums-sec">
+  <div class="wrap">
+    <div class="panel nums" data-a>
+      <div><b class="gt" data-count="3" data-pad="2">03</b><span class="lbl">Títulos em 2026</span></div>
+      <div><b class="gt" data-count="4" data-pad="2">04</b><span class="lbl">Pódios em 2026</span></div>
+      <div><b class="gt">Nº1</b><span class="lbl">Ranking MG · Sub-15</span></div>
+      <div><b class="gt">MG</b><span class="lbl">No Brasileiro Sub-17</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 TIMELINE -->
+<section class="tl-sec" id="timeline">
+  <div class="wrap">
+    <div class="tl-head"><h2 class="h2" data-a>Time<span>line</span> 2026</h2><p data-a style="--d:.1s">Do título que colocou a dupla no topo de Minas até a vaga no Campeonato Brasileiro Sub-17.</p></div>
+    <div class="tl" id="tl">
+      <svg viewBox="0 0 1000 640" preserveAspectRatio="none" aria-hidden="true">
+        <path class="bg" d="M5 330 C 60 328, 110 318, 167 300 S 280 275, 333 258 S 450 228, 500 208 S 610 178, 667 152 S 780 118, 833 95 S 950 66, 1000 58"/>
+        <path id="tlp" d="M5 330 C 60 328, 110 318, 167 300 S 280 275, 333 258 S 450 228, 500 208 S 610 178, 667 152 S 780 118, 833 95 S 950 66, 1000 58"/>
+      </svg>
+      <div class="evs" id="evs"><span class="prog"></span>
+        <article class="ev" style="left:0.5%;top:51.6%" data-p=".04"><span class="dot">01</span>
+          <div class="top"><div class="pos">1º</div><div class="ttl">Circuito Mineiro Sub-15</div><div class="lbl">11 abr · Betim/MG</div>
+          <div class="bot"><p>Título que levou a dupla ao posto de nº 1 de Minas. Inédito para Sete Lagoas.</p></div></div></article>
+        <article class="ev" style="left:16.7%;top:46.9%" data-p=".2"><span class="dot">02</span>
+          <div class="top"><div class="pos">3º</div><div class="ttl">Copa Regional Sudeste ABRATVP</div><div class="lbl">1–3 mai · Betim/MG</div>
+          <div class="bot"><p>Pódio Sub-15 contra duplas de Minas Gerais e do Rio de Janeiro.</p></div></div></article>
+        <article class="ev" style="left:33.3%;top:40.3%" data-p=".36"><span class="dot">03</span>
+          <div class="top"><div class="pos">★</div><div class="ttl">Câmara de Sete Lagoas</div><div class="lbl">26 mai</div>
+          <div class="bot"><p>Moção de congratulação às atletas e ao técnico Leandro Pires.</p></div></div></article>
+        <article class="ev" style="left:50%;top:32.5%" data-p=".52"><span class="dot">04</span>
+          <div class="top"><div class="pos">1º · 4º</div><div class="ttl">8º MVP Open · Adulto</div><div class="lbl">Sete Lagoas/MG</div>
+          <div class="bot"><p>Campeãs no Adulto Iniciante e 4º lugar no Adulto Open, contra duplas adultas.</p></div></div></article>
+        <article class="ev" style="left:66.7%;top:23.8%" data-p=".68"><span class="dot">05</span>
+          <div class="top"><div class="pos">1º</div><div class="ttl">Seletiva Mineira Sub-17</div><div class="lbl">21 set · Betim/MG</div>
+          <div class="bot"><p>Superaram Mackenzie, Olympico e Betim. Vaga como dupla nº 1 de MG.</p></div></div></article>
+        <article class="ev next" style="left:83.3%;top:14.8%" data-p=".86"><span class="dot">06</span>
+          <div class="top"><div class="pos">→</div><div class="ttl">Brasileiro Sub-17</div><div class="lbl">Próximo · Saquarema/RJ</div>
+          <div class="bot"><p>Minas Gerais no principal palco do vôlei de praia de base do país.</p></div></div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 EM QUADRA -->
+<section class="vsec" id="videos">
+  <div class="wrap">
+    <div class="panel" data-a>
+      <div class="vhead"><h2 class="h2">Em quadra</h2><p>Toque em um vídeo para assistir com som.</p></div>
+      <div class="vgrid">
+        <div class="vc" tabindex="0" data-a style="--d:.05s"><video src="videos/jogo-1.mp4" poster="videos/jogo-1.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">Em jogo · 01</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
+        <div class="vc" tabindex="0" data-a style="--d:.15s"><video src="videos/jogo-2.mp4" poster="videos/jogo-2.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">Em jogo · 02</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
+        <div class="vc" tabindex="0" data-a style="--d:.25s"><video src="videos/jogo-3.mp4" poster="videos/jogo-3.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">Em jogo · 03</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
+        <div class="vc" tabindex="0" data-a style="--d:.35s"><video src="videos/jogo-4.mp4" poster="videos/jogo-4.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">Em jogo · 04</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 PREMIAÇÕES -->
+<section class="prem" id="premiacoes">
+  <div class="wrap">
+    <div class="intro"><h2 class="h2" data-a>Premiações</h2><p data-a style="--d:.1s">Os momentos no pódio da temporada 2026, do Circuito Mineiro à homenagem na Câmara Municipal de Sete Lagoas.</p></div>
+    <div class="pgrid">
+      <div class="vc" tabindex="0" data-a><video src="videos/podio-circuito.mp4" poster="videos/podio-circuito.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">Circuito Mineiro · 1º</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
+      <div class="vc" tabindex="0" data-a style="--d:.1s"><video src="videos/premio-circuito-2.mp4" poster="videos/premio-circuito-2.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">Circuito Mineiro · pódio</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
+      <div class="vc" tabindex="0" data-a style="--d:.2s"><video src="videos/premio-copa.mp4" poster="videos/premio-copa.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">Copa Regional · 3º</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
+      <div class="vc" tabindex="0" data-a style="--d:.3s"><video src="videos/podio-mvp-open.mp4" poster="videos/podio-mvp-open.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">8º MVP Open · 1º</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
+      <div class="vc wide" tabindex="0" data-a><video src="videos/premio-camara-tv.mp4" poster="videos/premio-camara-tv.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">TV Câmara · Reunião Ordinária 26/05</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
+      <div class="wide" data-a="img" style="border-radius:18px;overflow:hidden;aspect-ratio:16/9;max-width:100%"><img class="cover" src="fotos/homenagem.jpg" alt="Gabi e Manu com as moções de congratulação" style="object-position:50% 14%"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 SAQUAREMA -->
+<section class="br">
+  <div class="wrap">
+    <div class="panel" data-a>
+      <div class="lbl" style="position:relative;z-index:1;opacity:.6">Próximo desafio · Campeonato Brasileiro Sub-17</div>
+      <div class="big gt split" id="saq">Saquarema</div>
+      <div class="grid">
+        <p>Com 13 e 14 anos, Gabi e Manu vão representar Minas Gerais como dupla nº 1 em uma categoria Sub-17, contra atletas até três anos mais velhas.</p>
+        <ul><li>Transporte até o RJ<span>01</span></li><li>Hospedagem e alimentação<span>02</span></li></ul>
+        <ul><li>Inscrição e taxas<span>03</span></li><li>Uniformes e material<span>04</span></li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 ESTRUTURA -->
+<section class="est">
+  <div class="wrap grid">
+    <div class="ph" data-a="img"><img class="cover" src="fotos/circuito-tecnico.jpg" alt="Gabi e Manu no pódio com o técnico Leandro Pires"></div>
+    <div>
+      <h2 class="h2" data-a>Estrutura</h2>
+      <p class="body" data-a>As atletas integram o Projeto de Treinamento de Alto Rendimento da Associação Transformar, na Arena MVP. Em paralelo, treinam vôlei de quadra na turma Sub-17 da Escola Mari Cassemiro.</p>
+      <div class="team">
+        <div data-a><b>Leandro Pires</b><span class="lbl">Treinador · Coordenação</span></div>
+        <div data-a style="--d:.08s"><b>Marcos Alexandre Neves</b><span class="lbl">Preparação física</span></div>
+        <div data-a style="--d:.16s"><b>Amanda Teixeira</b><span class="lbl">Psicologia do esporte</span></div>
+        <div data-a style="--d:.24s"><b>Escola Mari Cassemiro</b><span class="lbl">Vôlei de quadra · Sub-17</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 PATROCÍNIO -->
+<section class="pat" id="patrocinio">
+  <div class="wrap">
+    <h2 class="h2" data-a>Seja parceiro</h2>
+    <div class="why">
+      <div data-a><div class="n gt">01</div><h3 class="h3">Visibilidade</h3><p>Sua marca no uniforme de jogo, em fotos, vídeos e publicações de competições estaduais e nacionais.</p></div>
+      <div data-a style="--d:.12s"><div class="n gt">02</div><h3 class="h3">Conteúdo</h3><p>Menções nas redes da dupla durante a preparação, as viagens e os torneios da temporada.</p></div>
+      <div data-a style="--d:.24s"><div class="n gt">03</div><h3 class="h3">Orgulho local</h3><p>Sua empresa ligada a atletas que representam Sete Lagoas e Minas Gerais.</p></div>
+    </div>
+    <div class="cotas">
+      <div class="cota" data-a><h3>Apoio</h3><p class="lbl">▶ Valor a definir</p><ul><li>Logo no site e no portfolio</li><li>Agradecimento nas redes</li></ul></div>
+      <div class="cota top" data-a style="--d:.1s"><h3>Patrocínio</h3><p class="lbl">▶ Valor a definir</p><ul><li>Logo no uniforme de jogo</li><li>Posts nas competições</li><li>Logo no site e no portfolio</li></ul></div>
+      <div class="cota" data-a style="--d:.2s"><h3>Master</h3><p class="lbl">▶ Valor a definir</p><ul><li>Logo em destaque no uniforme</li><li>Conteúdo exclusivo da marca</li><li>Presença em ações e eventos</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 GALERIA -->
+<section class="gal-sec" id="galeria">
+  <div class="wrap">
+    <h2 class="h2" data-a>Galeria</h2>
+    <div class="gal">
+      <figure data-a><img src="fotos/circuito-podio-1.jpg" alt="Pódio do Circuito Mineiro Sub-15" loading="lazy"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
+      <figure data-a><img src="fotos/copa-dupla.jpg" alt="Gabi e Manu na Copa Regional Sudeste" loading="lazy"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="fotos/diversao.jpg" alt="Gabi e Manu brincando na areia" loading="lazy"></figure>
+      <figure data-a><img src="fotos/copa-costas-nomes.jpg" alt="Manu e Gabi de costas com os nomes no uniforme" loading="lazy"></figure>
+      <figure data-a><img src="fotos/homenagem-par.jpg" alt="Gabi e Manu com as moções" loading="lazy"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
+      <figure data-a><img src="fotos/copa-oculos.jpg" alt="Gabi e Manu de óculos escuros" loading="lazy"></figure>
+      <figure data-a><img src="fotos/copa-podio.jpg" alt="Pódio de 3º lugar na Copa Regional" loading="lazy"><figcaption>Copa Regional · 3º</figcaption></figure>
+      <figure data-a><img src="fotos/medalhas-2026.jpg" alt="Gabi e Manu com medalhas" loading="lazy"></figure>
+      <figure data-a><img src="fotos/pose.jpg" alt="Pose na areia" loading="lazy"></figure>
+      <figure data-a><img src="fotos/mvp-equipe.jpg" alt="Equipe da Arena MVP com a bandeira" loading="lazy"><figcaption>Arena MVP</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 11 CONTATO -->
+<section class="end" id="contato">
+  <div class="wrap">
+    <div class="panel" data-a>
+      <div class="big split" id="vj">Vamos juntos?</div>
+      <p>Fale com a gente e conheça as formas de apoiar Gabi e Manu na temporada rumo ao Brasileiro.</p>
+      <div class="btns">
+        <a class="btn w" href="https://wa.me/5531999187076" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>Falar no WhatsApp</a>
+      </div>
+      <div class="contacts">Humberto · +55 31 99918-7076</div>
+    </div>
+    <footer class="lbl"><span>Gabi &amp; Manu · Portfolio 2026</span><span>Sete Lagoas — MG</span><span>Arena MVP · Associação Transformar</span></footer>
+  </div>
+</section>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canIO='IntersectionObserver' in window;
+  // divide títulos em letras
+  document.querySelectorAll('.split').forEach(function(el){
+    var i=0,html='';
+    el.childNodes.forEach(function(n){
+      if(n.nodeType===3){n.textContent.split(' ').forEach(function(w,wi,arr){if(w){html+='<span class="ln">'+w.split('').map(function(c){return '<span class="ch" style="--i:'+(i++)+'">'+c+'</span>'}).join('')+'</span>'}if(wi<arr.length-1)html+=' '})}
+      else{var t=n.textContent;html+='<span class="ln '+n.className+'">'+t.split('').map(function(c){return '<span class="ch" style="--i:'+(i++)+'">'+c+'</span>'}).join('')+'</span>'}
+    });
+    el.innerHTML=html;
+  });
+  if(reduce||!canIO){root.classList.add('no-anim');document.querySelectorAll('.split').forEach(function(e){e.classList.add('in')});document.querySelectorAll('.ev').forEach(function(e){e.classList.add('on')});setupVideos();return}
+  root.classList.add('anim');
+  function count(el){var n=+el.dataset.count,p=+(el.dataset.pad||0),t0=null;function f(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/1200);var v=Math.round(n*(1-Math.pow(1-k,3)));el.textContent=String(v).padStart(p,'0');if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add('in');t.querySelectorAll&&t.querySelectorAll('[data-count]').forEach(count);io.unobserve(t)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('[data-a],.split').forEach(function(el){io.observe(el)});
+  requestAnimationFrame(function(){document.getElementById('logo').classList.add('in')});
+  // segurança: nada fica escondido se o observador falhar
+  setTimeout(function(){document.querySelectorAll('[data-a],.split').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)el.classList.add('in')})},1500);
+
+  // timeline desenhada conforme a rolagem
+  var tl=document.getElementById('tl'),path=document.getElementById('tlp'),evs=[].slice.call(document.querySelectorAll('.ev')),box=document.getElementById('evs');
+  var len=path.getTotalLength?path.getTotalLength():1600;
+  path.style.strokeDasharray=len;path.style.strokeDashoffset=len;
+  function tick(){
+    var r=tl.getBoundingClientRect(),vh=innerHeight;
+    var p=Math.max(0,Math.min(1,(vh*0.85-r.top)/(r.height+vh*0.25)));
+    path.style.strokeDashoffset=len*(1-p);
+    box.style.setProperty('--p',(p*100)+'%');
+    evs.forEach(function(ev){ev.classList.toggle('on',p>=+ev.dataset.p)});
+  }
+  function endCheck(){if(scrollY+innerHeight>=document.documentElement.scrollHeight-60)document.querySelectorAll('[data-a]:not(.in),.split:not(.in)').forEach(function(el){el.classList.add('in')})}
+  addEventListener('scroll',endCheck,{passive:true});
+  addEventListener('scroll',tick,{passive:true});addEventListener('resize',tick);tick();
+
+  // fotos surgindo desfocadas no fundo da capa
+  (function(){
+    var box=document.getElementById('ghosts');if(!box||reduce)return;
+    var pics=['circuito-podio-1','copa-dupla','diversao','homenagem-par','copa-oculos','copa-podio','medalhas-2026','pose','mvp-equipe','dupla-hero','circuito-tecnico','copa-costas-nomes'];
+    var k=0,N=7;
+    function place(im){
+      var w=14+Math.random()*12;
+      im.style.width=w+'%';im.style.aspectRatio='3/4';
+      im.style.left=(Math.random()*(100-w))+'%';im.style.top=(Math.random()*55-5)+'%';
+      im.style.setProperty('--r',(Math.random()*16-8).toFixed(1)+'deg');
+      im.style.setProperty('--o',(0.22+Math.random()*0.18).toFixed(2));
+      im.src='fotos/'+pics[k++%pics.length]+'.jpg';
+    }
+    for(var i=0;i<N;i++){
+      var im=new Image();im.alt='';im.decoding='async';
+      im.style.setProperty('--t',(7+Math.random()*4).toFixed(1)+'s');
+      im.style.setProperty('--dl',(-i*1.4).toFixed(1)+'s');
+      place(im);
+      im.addEventListener('animationiteration',function(e){place(e.target)});
+      box.appendChild(im);
+    }
+  })();
+  setupVideos();
+
+  function setupVideos(){
+    document.querySelectorAll('.vc').forEach(function(c){
+      var v=c.querySelector('video');
+      function go(){if(v.paused){document.querySelectorAll('.vc video').forEach(function(o){if(o!==v){o.pause();o.controls=false;o.parentElement.classList.remove('on')}});v.controls=true;v.play();c.classList.add('on')}}
+      c.addEventListener('click',go);
+      c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}});
+      v.addEventListener('ended',function(){c.classList.remove('on');v.controls=false});
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
