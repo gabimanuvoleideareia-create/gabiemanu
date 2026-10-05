@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Portfolio da dupla de vôlei de praia Gabi & Manu, de Sete Lagoas (MG): Nº 1 de Minas Gerais no Sub-15 e representantes de MG no Campeonato Brasileiro Sub-17.">
 <meta property="og:title" content="Gabi & Manu · Portfolio 2026">
-<meta property="og:description" content="Nº 1 de Minas Gerais no Sub-15 e representantes de MG no Brasileiro Sub-17 de vôlei de praia.">
 <meta property="og:image" content="fotos/capa-dupla.jpg">
 <title>Gabi & Manu Portfolio</title>
 <link rel="stylesheet" href="fonts/fonts.css">
@@ -128,16 +127,16 @@ section{position:relative}
 .nums span{display:block;margin-top:12px;color:rgba(255,255,255,.7)}
 
 /* ---------- 04 timeline ---------- */
-.tl-sec{background:radial-gradient(90% 55% at 50% 100%,rgba(228,168,200,.5),transparent 70%),linear-gradient(180deg,#A3A7BA 0%,#5E6582 34%,#3A4060 100%);padding-block:clamp(70px,9vw,130px);overflow:hidden}
+.tl-sec{background:radial-gradient(90% 55% at 50% 100%,rgba(228,168,200,.5),transparent 70%),linear-gradient(180deg,#8D90AE 0%,#4A4F78 26%,#262A4A 100%);padding-block:clamp(70px,9vw,130px);overflow:hidden}
 .tl-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
-.tl-head .h2{color:#1C2034}
+.tl-head .h2{color:#fff}
 .tl-head .h2 span{font-weight:300}
-.tl-head p{max-width:320px;color:#1C2034;font-size:14px}
-.tl{position:relative;height:580px;margin-top:10px}
+.tl-head p{max-width:320px;color:rgba(255,255,255,.85);font-size:15px}
+.tl{position:relative;height:600px;margin-top:10px}
 .tl svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.tl svg path{fill:none;stroke:#fff;stroke-width:2;vector-effect:non-scaling-stroke}
+.tl svg path{fill:none;stroke:#fff;stroke-width:2.5;vector-effect:non-scaling-stroke}
 .tl svg path.bg{stroke:rgba(255,255,255,.28)}
-.ev{position:absolute;width:calc(100%/6 - 16px);opacity:.0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.ev{position:absolute;width:calc(87%/8 - 4px);opacity:.0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 .ev.on{opacity:1;transform:none}
 .no-anim .ev{opacity:1;transform:none}
 .ev .dot{position:absolute;left:0;top:0;transform:translate(-50%,-50%) scale(.3);width:30px;height:30px;border-radius:50%;background:#fff;color:var(--ink);font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;transition:transform .5s cubic-bezier(.3,1.6,.5,1);box-shadow:0 0 0 6px rgba(255,255,255,.18)}
@@ -145,10 +144,41 @@ section{position:relative}
 .ev.next .dot{background:var(--g-text);color:#fff}
 .ev .top{position:absolute;left:-4px;top:30px;width:100%;color:#fff}
 .ev .bot{margin-top:12px}
-.ev .pos{font-weight:300;letter-spacing:-.06em;font-size:46px;line-height:.9}
-.ev .ttl{font-size:14px;font-weight:700;letter-spacing:-.01em;line-height:1.2;margin-top:6px}
-.ev .lbl{margin-top:6px;opacity:.85}
-.ev .bot p{font-size:13px;line-height:1.5;color:#fff;opacity:.9;max-width:210px}
+.ev .pos{font-weight:300;letter-spacing:-.06em;font-size:clamp(28px,2.6vw,40px);line-height:.9;white-space:nowrap}
+.ev .ttl{font-size:15px;font-weight:700;letter-spacing:-.01em;line-height:1.2;margin-top:6px}
+.ev .lbl{margin-top:6px;color:#E4C7EE;opacity:1}
+.ev .bot p{font-size:13.5px;line-height:1.45;color:#fff;opacity:.92;max-width:210px}
+
+
+/* ---------- timeline vertical ---------- */
+.vt{position:relative;list-style:none;max-width:1040px;margin:56px auto 0;padding:10px 0 20px}
+.vt-rail,.vt-fill{position:absolute;left:50%;top:0;width:3px;margin-left:-1.5px;border-radius:3px}
+.vt-rail{bottom:0;background:rgba(255,255,255,.18)}
+.vt-fill{height:0;background:linear-gradient(180deg,#E4C7EE,#fff)}
+.vt-ball{position:absolute;left:50%;top:0;width:44px;height:44px;margin:-22px 0 0 -22px;z-index:3;filter:drop-shadow(0 8px 14px rgba(0,0,0,.45));will-change:transform}
+.vt-ball svg{width:100%;height:100%;display:block}
+.vt-item{position:relative;display:grid;grid-template-columns:1fr 1fr;padding-block:22px}
+.vt-dot{position:absolute;left:50%;top:50%;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:#3A3F66;border:3px solid rgba(255,255,255,.35);z-index:2;transition:background .4s,border-color .4s,transform .4s}
+.vt-item.on .vt-dot{background:#fff;border-color:#E4C7EE;transform:scale(1.25)}
+.vt-item.next .vt-dot{border-style:dashed}
+.vt-card{grid-column:1;justify-self:end;box-sizing:border-box;width:calc(100% - 40px);max-width:420px;margin:0 40px 0 0;text-align:right;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(4px);border-radius:22px;padding:22px 26px;color:#fff;opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.vt-item:nth-child(even of .vt-item) .vt-card{grid-column:2;justify-self:start;margin:0 0 0 40px;text-align:left;transform:translateX(40px)}
+.vt-item.show .vt-card,.vt-item.show:nth-child(even of .vt-item) .vt-card{opacity:.55;transform:none}
+.vt-item.on .vt-card,.vt-item.on:nth-child(even of .vt-item) .vt-card{opacity:1;transform:none;border-color:rgba(228,199,238,.55);box-shadow:0 20px 50px -25px rgba(0,0,0,.6)}
+.vt-item.next .vt-card{background:linear-gradient(135deg,rgba(185,140,198,.35),rgba(91,95,176,.35));border-style:dashed}
+.vt-pos{font-weight:300;letter-spacing:-.06em;font-size:clamp(40px,4vw,58px);line-height:.9}
+.vt-item.next .vt-pos{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:#fff;color:var(--ink);display:inline-block;padding:6px 12px;border-radius:30px;line-height:1}
+.vt-when{margin-top:10px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#E4C7EE}
+.vt-card h3{font-size:clamp(20px,2vw,26px);font-weight:600;letter-spacing:-.03em;margin:6px 0 8px;line-height:1.1}
+.vt-card p{font-size:15px;line-height:1.5;color:rgba(255,255,255,.88)}
+.no-anim .vt-card,.no-anim .vt-item:nth-child(even of .vt-item) .vt-card{opacity:1;transform:none}
+@media (max-width:760px){
+  .vt-rail,.vt-fill,.vt-ball,.vt-dot{left:18px}
+  .vt-item{grid-template-columns:1fr}
+  .vt-card,.vt-item:nth-child(even of .vt-item) .vt-card{grid-column:1;justify-self:stretch;width:auto;max-width:none;margin:0 0 0 46px;text-align:left;transform:translateY(24px)}
+  .vt-ball{width:36px;height:36px;margin:-18px 0 0 -18px}
+}
+@media (prefers-reduced-motion:reduce){.vt-card{opacity:1;transform:none;transition:none}}
 
 /* ---------- 05 vídeos ---------- */
 .vsec{padding-block:clamp(70px,9vw,120px)}
@@ -176,6 +206,37 @@ section{position:relative}
 .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .pgrid .wide{grid-column:span 2}
 .pgrid .vc{border-radius:18px}
+
+
+/* ---------- na mídia ---------- */
+.midia{padding-block:clamp(60px,8vw,110px)}
+.midia .intro{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.midia .intro p{color:var(--mute);max-width:380px;font-size:14px}
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mcard{display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:210px;padding:24px;border-radius:24px;background:var(--card);border:1px solid var(--line);transition:transform .3s,box-shadow .3s}
+.mcard:hover,.mcard:focus-visible{transform:translateY(-4px);box-shadow:0 24px 50px -28px rgba(71,74,146,.55);outline:none}
+.mcard.feat{background:var(--ink);color:#fff;border-color:transparent}
+.mcard .src{display:flex;justify-content:space-between;gap:10px}
+.mcard .src span:last-child{opacity:.55}
+.mcard h3{font-size:clamp(19px,1.7vw,23px);font-weight:600;letter-spacing:-.03em;line-height:1.15}
+.mcard .go{font-size:13px;font-weight:600}
+.mcard .go::after{content:" →"}
+.mcard .thumb{margin:-24px -24px 0;aspect-ratio:16/9;overflow:hidden;border-radius:24px 24px 0 0;background:var(--lilac-2)}
+.mcard .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.mcard:hover .thumb img{transform:scale(1.05)}
+.mcard.has-img{gap:18px}
+.igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.icard{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:var(--ink);color:#fff;max-width:100%}
+.icard img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.icard:hover img{transform:scale(1.05)}
+.icard .cap{position:absolute;inset:auto 0 0 0;padding:16px;background:linear-gradient(transparent,rgba(14,12,20,.85));display:grid;gap:4px}
+.icard .cap b{font-size:15px;font-weight:600;letter-spacing:-.02em}
+@media (max-width:1000px){.igrid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.icard .cap{padding:10px}.icard .cap .lbl{display:none}.icard .cap b{font-size:13px;line-height:1.2}.icard .cap{background:linear-gradient(transparent,rgba(14,12,20,.92) 55%)}}
+.mrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.mrow a{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border-radius:30px;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:600}
+.mrow a:hover{background:var(--ink);color:#fff}
+@media (max-width:1000px){.mgrid{grid-template-columns:1fr}}
 
 /* ---------- 07 saquarema ---------- */
 .br{padding-block:clamp(60px,8vw,110px)}
@@ -210,7 +271,18 @@ section{position:relative}
 .cota:hover{transform:translateY(-6px)}
 .cota.top{background:var(--ink);color:#fff}
 .cota h3{font-size:34px}
-.cota .lbl{margin:10px 0 20px;opacity:.6}
+.cota .lbl{margin:0 0 10px;opacity:.6}
+.cota h3{margin-bottom:12px}
+.cota .val{font-size:clamp(34px,3.4vw,46px);font-weight:600;letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
+.cota .val span{font-size:16px;font-weight:500;letter-spacing:0;opacity:.6;margin-left:4px}
+.cota .per{font-size:13px;opacity:.65;margin:6px 0 16px}
+.cota .dest{font-size:13.5px;line-height:1.5;padding:12px 14px;border-radius:14px;background:rgba(123,108,180,.12);margin-bottom:18px}
+.cota.top .dest{background:rgba(255,255,255,.1)}
+.cota ul{font-size:13.5px!important}
+.cnote{margin-top:22px;font-size:14px;color:#3E3850;max-width:760px}
+.ask{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:40px;padding:26px 30px;border-radius:26px;background:rgba(255,255,255,.55)}
+.ask p{font-size:17px;font-weight:500;letter-spacing:-.02em;max-width:520px}
+.btn-ink{display:inline-flex;padding:15px 24px;border-radius:40px;background:var(--ink);color:#fff;font-size:14px;font-weight:600}
 .cota ul{list-style:none;display:grid;gap:9px;font-size:14px}
 .cota li{display:flex;gap:10px}
 .cota li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--violet);margin-top:8px}
@@ -218,12 +290,21 @@ section{position:relative}
 
 /* ---------- 10 galeria ---------- */
 .gal-sec{padding-block:clamp(70px,9vw,120px)}
-.gal{columns:4 230px;column-gap:12px;margin-top:40px}
-.gal figure{break-inside:avoid;margin:0 0 12px;position:relative;border-radius:18px;overflow:hidden}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+.gal figure{margin:0;position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/5}
 .gal img{width:100%;transition:transform .8s}
 .gal figure:hover img{transform:scale(1.04)}
 .gal figcaption{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.9);padding:5px 10px;border-radius:30px;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
 
+.gal:not(.open) figure:nth-child(n+13){display:none}
+.gal-more{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:420px;margin:14px auto 0;padding:16px;border:0;border-radius:40px;background:var(--ink);color:#fff;font:600 15px/1 var(--f);cursor:pointer;transition:transform .2s}
+.gal-more:hover{transform:translateY(-2px)}
+.gal-more span{background:var(--g-text);border-radius:20px;padding:5px 9px;font-size:12px}
+.gal-more:focus-visible{outline:3px solid var(--lilac);outline-offset:3px}
+.gal img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+@media (max-width:1000px){.gal{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.gal{grid-template-columns:1fr 1fr;gap:8px}.gal figcaption{font-size:9px;padding:4px 8px}}
+@media (max-width:560px){.gal:not(.open) figure:nth-child(n+5){display:none}}
 /* ---------- 11 contato ---------- */
 .end{background:var(--g-mist);padding-block:clamp(60px,8vw,110px)}
 .end .panel{padding:clamp(30px,5vw,70px);text-align:center}
@@ -255,7 +336,7 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
   .tl svg{display:none}
   .evs{position:relative;display:grid;gap:34px;padding:6px 0 6px 40px}
   .evs::before{content:"";position:absolute;left:14px;top:0;bottom:0;width:2px;background:rgba(255,255,255,.3)}
-  .evs .prog{position:absolute;left:14px;top:0;width:2px;background:#fff;height:var(--p,0%)}
+  .evs .prog{position:absolute;left:14px;top:0;width:2px;background:#fff;height:var(--p,0%);transition:height 2.6s cubic-bezier(.4,.1,.2,1)}
   .ev{position:relative!important;left:auto!important;top:auto!important;width:auto}
   .ev .dot{left:-26px;top:18px}
   .ev .top,.ev .bot{position:static;width:auto}
@@ -278,6 +359,14 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
   .br .big{font-size:14.5vw}
   .pgrid .wide{grid-column:1/-1}
 }
+
+/* ---------- botão PDF ---------- */
+.pdf-btn{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:90;display:inline-flex;align-items:center;gap:8px;padding:13px 18px;border:0;border-radius:40px;background:var(--ink);color:#fff;font:600 13px/1 var(--f);box-shadow:0 12px 30px -10px rgba(0,0,0,.55);cursor:pointer}
+.pdf-btn svg{width:16px;height:16px}
+.pdf-btn:hover{transform:translateY(-2px)}
+.pdf-btn[disabled]{opacity:.85;cursor:progress}
+.pdf-btn:focus-visible{outline:3px solid var(--lilac);outline-offset:3px}
+@media print{.pdf-btn{display:none}}
 </style>
 </head>
 <body>
@@ -289,6 +378,7 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
   <a href="#timeline">Timeline</a>
   <a href="#videos" class="hide-m">Vídeos</a>
   <a href="#premiacoes" class="hide-m">Premiações</a>
+  <a href="#midia" class="hide-m">Na mídia</a>
   <a href="#contato" class="cta">Seja parceiro</a>
 </nav>
 
@@ -356,33 +446,29 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
 <!-- 04 TIMELINE -->
 <section class="tl-sec" id="timeline">
   <div class="wrap">
-    <div class="tl-head"><h2 class="h2" data-a>Time<span>line</span> 2026</h2><p data-a style="--d:.1s">Do título que colocou a dupla no topo de Minas até a vaga no Campeonato Brasileiro Sub-17.</p></div>
-    <div class="tl" id="tl">
-      <svg viewBox="0 0 1000 640" preserveAspectRatio="none" aria-hidden="true">
-        <path class="bg" d="M5 330 C 60 328, 110 318, 167 300 S 280 275, 333 258 S 450 228, 500 208 S 610 178, 667 152 S 780 118, 833 95 S 950 66, 1000 58"/>
-        <path id="tlp" d="M5 330 C 60 328, 110 318, 167 300 S 280 275, 333 258 S 450 228, 500 208 S 610 178, 667 152 S 780 118, 833 95 S 950 66, 1000 58"/>
-      </svg>
-      <div class="evs" id="evs"><span class="prog"></span>
-        <article class="ev" style="left:0.5%;top:51.6%" data-p=".04"><span class="dot">01</span>
-          <div class="top"><div class="pos">1º</div><div class="ttl">Circuito Mineiro Sub-15</div><div class="lbl">11 abr · Betim/MG</div>
-          <div class="bot"><p>Título que levou a dupla ao posto de nº 1 de Minas. Inédito para Sete Lagoas.</p></div></div></article>
-        <article class="ev" style="left:16.7%;top:46.9%" data-p=".2"><span class="dot">02</span>
-          <div class="top"><div class="pos">3º</div><div class="ttl">Copa Regional Sudeste ABRATVP</div><div class="lbl">1–3 mai · Betim/MG</div>
-          <div class="bot"><p>Pódio Sub-15 contra duplas de Minas Gerais e do Rio de Janeiro.</p></div></div></article>
-        <article class="ev" style="left:33.3%;top:40.3%" data-p=".36"><span class="dot">03</span>
-          <div class="top"><div class="pos">★</div><div class="ttl">Câmara de Sete Lagoas</div><div class="lbl">26 mai</div>
-          <div class="bot"><p>Moção de congratulação às atletas e ao técnico Leandro Pires.</p></div></div></article>
-        <article class="ev" style="left:50%;top:32.5%" data-p=".52"><span class="dot">04</span>
-          <div class="top"><div class="pos">1º · 4º</div><div class="ttl">8º MVP Open · Adulto</div><div class="lbl">Sete Lagoas/MG</div>
-          <div class="bot"><p>Campeãs no Adulto Iniciante e 4º lugar no Adulto Open, contra duplas adultas.</p></div></div></article>
-        <article class="ev" style="left:66.7%;top:23.8%" data-p=".68"><span class="dot">05</span>
-          <div class="top"><div class="pos">1º</div><div class="ttl">Seletiva Mineira Sub-17</div><div class="lbl">21 set · Betim/MG</div>
-          <div class="bot"><p>Superaram Mackenzie, Olympico e Betim. Vaga como dupla nº 1 de MG.</p></div></div></article>
-        <article class="ev next" style="left:83.3%;top:14.8%" data-p=".86"><span class="dot">06</span>
-          <div class="top"><div class="pos">→</div><div class="ttl">Brasileiro Sub-17</div><div class="lbl">Próximo · Saquarema/RJ</div>
-          <div class="bot"><p>Minas Gerais no principal palco do vôlei de praia de base do país.</p></div></div></article>
-      </div>
-    </div>
+    <div class="tl-head"><h2 class="h2" data-a>Time<span>line</span> 2026</h2><p data-a style="--d:.1s">Role a página: a bola acompanha cada conquista da temporada, do Circuito Mineiro ao Brasileiro Sub-17.</p></div>
+    <ol class="vt" id="vt">
+      <span class="vt-rail"></span><span class="vt-fill" id="vtFill"></span>
+      <span class="vt-ball" id="vtBall"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="#FFF7E6" stroke="#1C2034" stroke-width="1.6"/><path d="M20 1.5c-4 6-4 14 0 18.5M20 20c5-3 11-3 17.5 1.5M20 20c-1 6-6 11-13 13.5M7 6c5 3 9 8 13 14M33 7c-2 5-7 10-13 13M24 38c-2-6-1-12 4-17" fill="none" stroke="#1C2034" stroke-width="1.6" stroke-linecap="round"/><path d="M20 1.5c-4 6-4 14 0 18.5c5-3 11-3 17.5 1.5A18.5 18.5 0 0 0 20 1.5z" fill="#F5C842" opacity=".9"/><path d="M20 20c-1 6-6 11-13 13.5A18.5 18.5 0 0 0 37.5 21.5C31 17 25 17 20 20z" fill="#2E6FD8" opacity=".85"/></svg></span>
+      <li class="vt-item"><span class="vt-dot"></span>
+        <div class="vt-card"><div class="vt-pos">1º</div><div class="vt-when">11 abr · Betim/MG</div><h3>Circuito Mineiro Sub-15</h3><p>Título que levou a dupla ao posto de nº 1 de Minas. Inédito para Sete Lagoas.</p></div></li>
+      <li class="vt-item"><span class="vt-dot"></span>
+        <div class="vt-card"><div class="vt-pos">3º</div><div class="vt-when">1–3 mai · Betim/MG</div><h3>Copa Regional Sudeste ABRATVP</h3><p>Pódio Sub-15 contra duplas de Minas Gerais e do Rio de Janeiro.</p></div></li>
+      <li class="vt-item"><span class="vt-dot"></span>
+        <div class="vt-card"><div class="vt-pos">★</div><div class="vt-when">26 mai</div><h3>Câmara de Sete Lagoas</h3><p>Moção de congratulação às atletas e ao técnico Leandro Pires.</p></div></li>
+      <li class="vt-item"><span class="vt-dot"></span>
+        <div class="vt-card"><div class="vt-pos">1º · 2º</div><div class="vt-when">13 e 14 jun · Sete Lagoas</div><h3>JESEL 2026 · Vôlei de Areia</h3><p>Manu campeã pelo Colégio Regina Pais e Gabi vice pelo Colégio Elite Master, módulo II.</p></div></li>
+      <li class="vt-item"><span class="vt-dot"></span>
+        <div class="vt-card"><div class="vt-pos">1º · 4º</div><div class="vt-when">Sete Lagoas/MG</div><h3>8º MVP Open · Adulto</h3><p>Campeãs no Adulto Iniciante e 4º lugar no Adulto Open, contra duplas adultas.</p></div></li>
+      <li class="vt-item"><span class="vt-dot"></span>
+        <div class="vt-card"><div class="vt-pos">1º</div><div class="vt-when">21 set · Betim/MG</div><h3>Seletiva Mineira Sub-17</h3><p>Superaram Mackenzie, Olympico e Betim. Vaga como dupla nº 1 de MG.</p></div></li>
+      <li class="vt-item"><span class="vt-dot"></span>
+        <div class="vt-card"><div class="vt-pos">1º</div><div class="vt-when">26 e 27 set · Sete Lagoas</div><h3>JESEL 2026 · Vôlei de Quadra</h3><p>Gabi campeã pelo Colégio Elite Master, módulo II.</p></div></li>
+      <li class="vt-item next"><span class="vt-dot"></span>
+        <div class="vt-card"><div class="vt-pos">Próximo</div><div class="vt-when">21 e 22 nov · local a definir</div><h3>Estadual Sub-17</h3><p>A dupla campeã leva o título de nº 1 de Minas Gerais.</p></div></li>
+      <li class="vt-item next"><span class="vt-dot"></span>
+        <div class="vt-card"><div class="vt-pos">Próximo</div><div class="vt-when">10 a 13 dez · Saquarema/RJ</div><h3>Brasileiro Sub-17</h3><p>Minas Gerais no principal palco do vôlei de praia de base do país.</p></div></li>
+    </ol>
   </div>
 </section>
 
@@ -412,6 +498,37 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
       <div class="vc" tabindex="0" data-a style="--d:.3s"><video src="videos/podio-mvp-open.mp4" poster="videos/podio-mvp-open.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">8º MVP Open · 1º</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
       <div class="vc wide" tabindex="0" data-a><video src="videos/premio-camara-tv.mp4" poster="videos/premio-camara-tv.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">TV Câmara · Reunião Ordinária 26/05</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
       <div class="wide" data-a="img" style="border-radius:18px;overflow:hidden;aspect-ratio:16/9;max-width:100%"><img class="cover" src="fotos/homenagem.jpg" alt="Gabi e Manu com as moções de congratulação" style="object-position:50% 14%"></div>
+    </div>
+  </div>
+</section>
+
+<!-- NA MÍDIA -->
+<section class="midia" id="midia">
+  <div class="wrap">
+    <div class="intro"><h2 class="h2" data-a>Na mídia</h2><p data-a style="--d:.1s">A trajetória da dupla em jornais, rádio e redes de Sete Lagoas.</p></div>
+    <div class="mgrid">
+      <a class="mcard feat has-img" data-a href="https://7diasnews.com.br/esportes/adolescentes-de-sete-lagoas-vencem-potencias-de-bh-e-vao-ao-brasileiro-de-volei-de-praia/" target="_blank" rel="noopener">
+        <div class="thumb"><img src="https://7diasnews.com.br/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-29-at-09.32.02-1-edited.jpeg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.mcard').classList.remove('has-img');this.parentNode.remove()"></div>
+        <div class="src lbl"><span>7 Dias News</span><span>29 set 2026</span></div>
+        <h3>Adolescentes de Sete Lagoas vencem potências de BH e vão ao Brasileiro de Vôlei de Praia</h3>
+        <span class="go">Ler matéria</span></a>
+      <a class="mcard has-img" data-a style="--d:.1s" href="https://www.megacidade.com/noticia/66744/atletas-da-arena-mvp-de-sete-lagoas-conquistam-o-titulo-mineiro-de-volei-de-praia-sub-15" target="_blank" rel="noopener">
+        <div class="thumb"><img src="https://www.megacidade.com/images/noticias/66744/579af4039841648c96232ca820800217.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.mcard').classList.remove('has-img');this.parentNode.remove()"></div>
+        <div class="src lbl"><span>Megacidade</span><span>15 abr 2026</span></div>
+        <h3>Atletas da Arena MVP de Sete Lagoas conquistam o título mineiro de vôlei de praia Sub-15</h3>
+        <span class="go">Ler matéria</span></a>
+      <a class="mcard" data-a style="--d:.2s" href="https://open.spotify.com/episode/35hOMfcuWbRXaiOxEvmGzo" target="_blank" rel="noopener">
+        <div class="src lbl"><span>Câmara de Sete Lagoas · Podcast</span><span>24 set 2026</span></div>
+        <h3>Giro Esportivo: a dupla no podcast de esportes da Câmara Municipal</h3>
+        <span class="go">Ouvir no Spotify</span></a>
+    </div>
+    <div class="igrid">
+      <a class="icard" data-a href="https://www.instagram.com/p/DdlvXpzFiQv/" target="_blank" rel="noopener"><img src="fotos/insta-1.jpg" alt="Campeãs da Seletiva em Betim" loading="lazy"><span class="cap"><span class="lbl">Instagram · Arena MVP · 22 set</span><b>Campeãs da Seletiva em Betim</b></span></a>
+      <a class="icard" data-a href="https://www.instagram.com/p/Ddoec1oujmG/" target="_blank" rel="noopener"><img src="fotos/insta-2.jpg" alt="Dupla nº 1 de Minas Gerais" loading="lazy"><span class="cap"><span class="lbl">Instagram · Prefeitura de Sete Lagoas</span><b>Deu ouro no vôlei de praia</b></span></a>
+      <a class="icard" data-a href="https://www.instagram.com/p/DXKcwzckeX1/" target="_blank" rel="noopener"><img src="fotos/insta-3.jpg" alt="Pódio do Circuito Mineiro Sub-15" loading="lazy"><span class="cap"><span class="lbl">Instagram · Prefeitura de Sete Lagoas</span><b>Título do Circuito Mineiro Sub-15</b></span></a>
+      <a class="icard" data-a href="https://www.instagram.com/p/DdpEjEdic6p/" target="_blank" rel="noopener"><img src="fotos/insta-4.jpg" alt="Dupla vence Seletiva Mineira Sub-17" loading="lazy"><span class="cap"><span class="lbl">SeteLagoas.com.br</span><b>Dupla vence Seletiva Mineira Sub-17</b></span></a>
+      <a class="icard" data-a href="https://www.instagram.com/p/Ddl3yJ9HPUj/" target="_blank" rel="noopener"><img src="fotos/insta-5.jpg" alt="Campeãs em Betim" loading="lazy"><span class="cap"><span class="lbl">Instagram</span><b>Campeãs em Betim</b></span></a>
+      <a class="icard" data-a href="https://www.instagram.com/p/Dd6jqF5Dkog/" target="_blank" rel="noopener"><img src="fotos/insta-6.jpg" alt="Vaga no Brasileiro Sub-17" loading="lazy"><span class="cap"><span class="lbl">TV ClickSete</span><b>Vaga no Brasileiro Sub-17</b></span></a>
     </div>
   </div>
 </section>
@@ -458,9 +575,23 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
       <div data-a style="--d:.24s"><div class="n gt">03</div><h3 class="h3">Orgulho local</h3><p>Sua empresa ligada a atletas que representam Sete Lagoas e Minas Gerais.</p></div>
     </div>
     <div class="cotas">
-      <div class="cota" data-a><h3>Apoio</h3><p class="lbl">▶ Valor a definir</p><ul><li>Logo no site e no portfolio</li><li>Agradecimento nas redes</li></ul></div>
-      <div class="cota top" data-a style="--d:.1s"><h3>Patrocínio</h3><p class="lbl">▶ Valor a definir</p><ul><li>Logo no uniforme de jogo</li><li>Posts nas competições</li><li>Logo no site e no portfolio</li></ul></div>
-      <div class="cota" data-a style="--d:.2s"><h3>Master</h3><p class="lbl">▶ Valor a definir</p><ul><li>Logo em destaque no uniforme</li><li>Conteúdo exclusivo da marca</li><li>Presença em ações e eventos</li></ul></div>
+      <div class="cota top" data-a><p class="lbl">Patrocinadora principal</p><h3>Master</h3>
+        <p class="val">R$ 2.540<span>/mês</span></p><p class="per">ou R$ 15.240 por 6 meses</p>
+        <p class="dest">Custeia ajuda de custo das atletas e do treinador Leandro, academia, preparador físico e assessoria esportiva e de marketing.</p>
+        <ul><li>Destaque máximo da marca nos uniformes de competição e treino</li><li>Menção como "Patrocinadora Master da dupla Gabi e Manu"</li><li>Destaque nas publicações das atletas, da Arena MVP e da Associação Transformar</li><li>Marca em fotos, vídeos, entrevistas, banners e materiais oficiais</li><li>Visita das atletas à empresa para ação institucional</li><li>Relatório periódico de treinos e competições</li><li>Exclusividade por segmento, se acordada</li></ul></div>
+      <div class="cota" data-a style="--d:.1s"><p class="lbl">Patrocinadora</p><h3>Ouro</h3>
+        <p class="val">R$ 1.270<span>/mês</span></p><p class="per">ou R$ 7.620 por 6 meses</p>
+        <p class="dest">Custeia competições (transporte, alimentação e inscrições), uniformes, nutricionista, psicóloga, preparação física e treinos na Arena MVP.</p>
+        <ul><li>Logomarca nos materiais de divulgação do projeto</li><li>Menções periódicas como "Patrocinadora Ouro"</li><li>Marca em publicações selecionadas e em conteúdos de treinos, viagens e competições</li><li>Atletas usando ou apresentando produtos e serviços da empresa, quando adequado</li><li>Certificado de participação como empresa apoiadora</li></ul></div>
+      <div class="cota" data-a style="--d:.2s"><p class="lbl">Empresa apoiadora</p><h3>Prata</h3>
+        <p class="val">R$ 635<span>/mês</span></p><p class="per">ou R$ 3.810 por 6 meses</p>
+        <p class="dest">Apoio acessível para empresas locais e profissionais liberais, direcionado a despesas específicas de treino e competição.</p>
+        <ul><li>Logomarca em materiais coletivos de divulgação</li><li>Menção como "Empresa Apoiadora · Cota Prata"</li><li>Agradecimento nas redes sociais</li><li>Nome na relação de apoiadores</li><li>Certificado de apoio à dupla</li></ul></div>
+    </div>
+    <p class="cnote" data-a>Também aceitamos apoio em produtos ou serviços (academia, nutrição, transporte, material esportivo) e apoio pontual para a viagem ao Brasileiro Sub-17.</p>
+    <div class="ask" data-a>
+      <p>Quer apoiar Gabi e Manu? Fale com a gente e escolha a cota ideal para a sua empresa.</p>
+      <a class="btn-ink" href="https://wa.me/5531999187076?text=Ol%C3%A1!%20Vi%20o%20portfolio%20da%20Gabi%20e%20Manu%20e%20quero%20conversar%20sobre%20uma%20parceria." target="_blank" rel="noopener">Quero conversar sobre uma parceria</a>
     </div>
   </div>
 </section>
@@ -469,18 +600,67 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
 <section class="gal-sec" id="galeria">
   <div class="wrap">
     <h2 class="h2" data-a>Galeria</h2>
-    <div class="gal">
-      <figure data-a><img src="fotos/circuito-podio-1.jpg" alt="Pódio do Circuito Mineiro Sub-15" loading="lazy"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
-      <figure data-a><img src="fotos/copa-dupla.jpg" alt="Gabi e Manu na Copa Regional Sudeste" loading="lazy"><figcaption>Copa Regional Sudeste</figcaption></figure>
-      <figure data-a><img src="fotos/diversao.jpg" alt="Gabi e Manu brincando na areia" loading="lazy"></figure>
-      <figure data-a><img src="fotos/copa-costas-nomes.jpg" alt="Manu e Gabi de costas com os nomes no uniforme" loading="lazy"></figure>
-      <figure data-a><img src="fotos/homenagem-par.jpg" alt="Gabi e Manu com as moções" loading="lazy"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
-      <figure data-a><img src="fotos/copa-oculos.jpg" alt="Gabi e Manu de óculos escuros" loading="lazy"></figure>
-      <figure data-a><img src="fotos/copa-podio.jpg" alt="Pódio de 3º lugar na Copa Regional" loading="lazy"><figcaption>Copa Regional · 3º</figcaption></figure>
-      <figure data-a><img src="fotos/medalhas-2026.jpg" alt="Gabi e Manu com medalhas" loading="lazy"></figure>
-      <figure data-a><img src="fotos/pose.jpg" alt="Pose na areia" loading="lazy"></figure>
-      <figure data-a><img src="fotos/mvp-equipe.jpg" alt="Equipe da Arena MVP com a bandeira" loading="lazy"><figcaption>Arena MVP</figcaption></figure>
+    <div class="gal" id="gal">
+      <figure data-a><img src="galeria/g37.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
+      <figure data-a><img src="galeria/g50.jpg" alt="Gabi e Manu · Câmara de Sete Lagoas" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
+      <figure data-a><img src="galeria/g43.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="galeria/g10.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
+      <figure data-a><img src="galeria/g40.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="galeria/g23.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="galeria/g35.jpg" alt="Gabi e Manu · Circuito AVP Mineiro" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Circuito AVP Mineiro</figcaption></figure>
+      <figure data-a><img src="galeria/g20.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="galeria/g38.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
+      <figure data-a><img src="galeria/g48.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="galeria/g09.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
+      <figure data-a><img src="galeria/g01.jpg" alt="Gabi e Manu · Vôlei de quadra" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Vôlei de quadra</figcaption></figure>
+      <figure data-a><img src="galeria/g02.jpg" alt="Gabi e Manu · Vôlei de quadra" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Vôlei de quadra</figcaption></figure>
+      <figure data-a><img src="galeria/g03.jpg" alt="Gabi e Manu · Vôlei de quadra" width="1400" height="1050" loading="lazy" decoding="async"><figcaption>Vôlei de quadra</figcaption></figure>
+      <figure data-a><img src="galeria/g04.jpg" alt="Gabi e Manu · Vôlei de quadra" width="1400" height="1050" loading="lazy" decoding="async"><figcaption>Vôlei de quadra</figcaption></figure>
+      <figure data-a><img src="galeria/g05.jpg" alt="Gabi e Manu · Circuito AVP Mineiro" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Circuito AVP Mineiro</figcaption></figure>
+      <figure data-a><img src="galeria/g06.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
+      <figure data-a><img src="galeria/g07.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
+      <figure data-a><img src="galeria/g08.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
+      <figure data-a><img src="galeria/g11.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
+      <figure data-a><img src="galeria/g12.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
+      <figure data-a><img src="galeria/g13.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
+      <figure data-a><img src="galeria/g14.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="galeria/g15.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="1400" height="788" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="galeria/g16.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="galeria/g17.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="1400" height="788" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="galeria/g18.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="galeria/g19.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="galeria/g21.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="1400" height="788" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="galeria/g22.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="galeria/g24.jpg" alt="Gabi e Manu" width="646" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria/g25.jpg" alt="Gabi e Manu" width="825" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria/g26.jpg" alt="Gabi e Manu" width="646" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria/g27.jpg" alt="Gabi e Manu · 2022 · Início" width="738" height="972" loading="lazy" decoding="async"><figcaption>2022 · Início</figcaption></figure>
+      <figure data-a><img src="galeria/g28.jpg" alt="Gabi e Manu" width="1050" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria/g29.jpg" alt="Gabi e Manu" width="630" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria/g30.jpg" alt="Gabi e Manu" width="646" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria/g31.jpg" alt="Gabi e Manu · Vôlei de quadra" width="1400" height="1050" loading="lazy" decoding="async"><figcaption>Vôlei de quadra</figcaption></figure>
+      <figure data-a><img src="galeria/g32.jpg" alt="Gabi e Manu · Circuito AVP Mineiro" width="787" height="1400" loading="lazy" decoding="async"><figcaption>Circuito AVP Mineiro</figcaption></figure>
+      <figure data-a><img src="galeria/g33.jpg" alt="Gabi e Manu · Circuito AVP Mineiro" width="1400" height="1050" loading="lazy" decoding="async"><figcaption>Circuito AVP Mineiro</figcaption></figure>
+      <figure data-a><img src="galeria/g34.jpg" alt="Gabi e Manu · Circuito AVP Mineiro" width="1400" height="1050" loading="lazy" decoding="async"><figcaption>Circuito AVP Mineiro</figcaption></figure>
+      <figure data-a><img src="galeria/g36.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
+      <figure data-a><img src="galeria/g39.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
+      <figure data-a><img src="galeria/g41.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="galeria/g42.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="galeria/g44.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="galeria/g45.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="galeria/g46.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="galeria/g47.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="galeria/g49.jpg" alt="Gabi e Manu · Câmara de Sete Lagoas" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
+      <figure data-a><img src="galeria/g51.jpg" alt="Gabi e Manu · Câmara de Sete Lagoas" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
+      <figure data-a><img src="galeria/g52.jpg" alt="Gabi e Manu · Câmara de Sete Lagoas" width="720" height="1280" loading="lazy" decoding="async"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
+      <figure data-a><img src="galeria/g53.jpg" alt="Gabi e Manu · Câmara de Sete Lagoas" width="720" height="1280" loading="lazy" decoding="async"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
+      <figure data-a><img src="galeria/g54.jpg" alt="Gabi e Manu · Câmara de Sete Lagoas" width="1280" height="720" loading="lazy" decoding="async"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
+      <figure data-a><img src="galeria/g55.jpg" alt="Gabi e Manu · Câmara de Sete Lagoas" width="720" height="1280" loading="lazy" decoding="async"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
+      <figure data-a><img src="galeria/g56.jpg" alt="Gabi e Manu · Câmara de Sete Lagoas" width="1400" height="788" loading="lazy" decoding="async"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
+      <figure data-a><img src="galeria/g57.jpg" alt="Gabi e Manu · Câmara de Sete Lagoas" width="787" height="1400" loading="lazy" decoding="async"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
+      <figure data-a><img src="galeria/g58.jpg" alt="Gabi e Manu" width="1050" height="1400" loading="lazy" decoding="async"></figure>
     </div>
+    <button class="gal-more" id="galMore" type="button" aria-expanded="false" aria-controls="gal">Ver todas as fotos <span>58</span></button>
   </div>
 </section>
 
@@ -513,7 +693,7 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
     });
     el.innerHTML=html;
   });
-  if(reduce||!canIO){root.classList.add('no-anim');document.querySelectorAll('.split').forEach(function(e){e.classList.add('in')});document.querySelectorAll('.ev').forEach(function(e){e.classList.add('on')});setupVideos();return}
+  if(reduce||!canIO){root.classList.add('no-anim');document.querySelectorAll('.split').forEach(function(e){e.classList.add('in')});document.querySelectorAll('.vt-item').forEach(function(e){e.classList.add('on','show')});setupVideos();return}
   root.classList.add('anim');
   function count(el){var n=+el.dataset.count,p=+(el.dataset.pad||0),t0=null;function f(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/1200);var v=Math.round(n*(1-Math.pow(1-k,3)));el.textContent=String(v).padStart(p,'0');if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add('in');t.querySelectorAll&&t.querySelectorAll('[data-count]').forEach(count);io.unobserve(t)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
@@ -522,20 +702,19 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
   // segurança: nada fica escondido se o observador falhar
   setTimeout(function(){document.querySelectorAll('[data-a],.split').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)el.classList.add('in')})},1500);
 
-  // timeline desenhada conforme a rolagem
-  var tl=document.getElementById('tl'),path=document.getElementById('tlp'),evs=[].slice.call(document.querySelectorAll('.ev')),box=document.getElementById('evs');
-  var len=path.getTotalLength?path.getTotalLength():1600;
-  path.style.strokeDasharray=len;path.style.strokeDashoffset=len;
-  function tick(){
-    var r=tl.getBoundingClientRect(),vh=innerHeight;
-    var p=Math.max(0,Math.min(1,(vh*0.85-r.top)/(r.height+vh*0.25)));
-    path.style.strokeDashoffset=len*(1-p);
-    box.style.setProperty('--p',(p*100)+'%');
-    evs.forEach(function(ev){ev.classList.toggle('on',p>=+ev.dataset.p)});
-  }
+  // timeline vertical: bola de vôlei desce com a rolagem e acende cada marco
+  (function(){
+    var vt=document.getElementById('vt'),fill=document.getElementById('vtFill'),ball=document.getElementById('vtBall'),items=[].slice.call(vt.querySelectorAll('.vt-item'));
+    function upd(){
+      var r=vt.getBoundingClientRect(),y=Math.max(0,Math.min(r.height,innerHeight*0.55-r.top));
+      fill.style.height=y+'px';ball.style.transform='translateY('+y+'px) rotate('+(y*0.9)+'deg)';
+      items.forEach(function(it){var c=it.offsetTop+it.offsetHeight/2;it.classList.toggle('show',y>=c-innerHeight*0.32);it.classList.toggle('on',y>=c-10)});
+    }
+    addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+  })();
   function endCheck(){if(scrollY+innerHeight>=document.documentElement.scrollHeight-60)document.querySelectorAll('[data-a]:not(.in),.split:not(.in)').forEach(function(el){el.classList.add('in')})}
   addEventListener('scroll',endCheck,{passive:true});
-  addEventListener('scroll',tick,{passive:true});addEventListener('resize',tick);tick();
+  
 
   // fotos surgindo desfocadas no fundo da capa
   (function(){
@@ -570,6 +749,66 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
       v.addEventListener('ended',function(){c.classList.remove('on');v.controls=false});
     });
   }
+
+  // galeria: "ver mais" no celular
+  (function(){var g=document.getElementById('gal'),bt=document.getElementById('galMore');if(!g||!bt)return;
+    bt.addEventListener('click',function(){var o=g.classList.toggle('open');bt.setAttribute('aria-expanded',o);bt.innerHTML=o?'Ver menos fotos':'Ver todas as fotos <span>58</span>';
+      if(o)g.querySelectorAll('figure').forEach(function(f){f.classList.add('in')});else g.scrollIntoView({block:'start'})});})();
+})();
+</script>
+<button class="pdf-btn" id="pdfBtn" type="button" aria-label="Baixar o portfolio em PDF"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg><span>Baixar PDF</span></button>
+<script>
+(function(){
+  var btn=document.getElementById('pdfBtn'),lbl=btn.querySelector('span');
+  function load(src){return new Promise(function(ok,err){var s=document.createElement('script');s.src=src;s.onload=ok;s.onerror=err;document.head.appendChild(s)})}
+  function prep(doc){
+    var r=doc.documentElement;r.classList.remove('anim');r.classList.add('no-anim');
+    doc.querySelectorAll('.split').forEach(function(e){e.classList.add('in')});
+    doc.querySelectorAll('.split .ln').forEach(function(e){e.style.margin='0';e.style.padding='0';e.style.display='inline'});
+    doc.querySelectorAll('.split .ch').forEach(function(e){e.style.transform='none';e.style.filter='none';e.style.opacity='1';e.style.display='inline'});
+    doc.querySelectorAll('[data-a]').forEach(function(e){e.classList.add('in')});
+    doc.querySelectorAll('.vt-item').forEach(function(e){e.classList.add('on','show')});
+    doc.querySelectorAll('.nav,.pdf-btn,.ghosts,.vt-ball,.gal-more,.mcard .thumb').forEach(function(e){e.remove()});
+    var f=doc.getElementById('vtFill');if(f)f.style.height='100%';
+    doc.querySelectorAll('video').forEach(function(v){v.remove()});
+    doc.querySelectorAll('.gt').forEach(function(e){e.style.background='none';e.style.webkitTextFillColor='';e.style.color='#8F7CC6'});
+    doc.querySelectorAll('.vc .play').forEach(function(e){e.style.opacity='.9'});
+    doc.querySelectorAll('.float').forEach(function(e){e.style.animation='none'});
+    var st=doc.createElement('style');st.textContent='*,*:before,*:after{animation:none!important;transition:none!important}.capa{background-size:100% 100%!important}.logo{line-height:1.02!important}.capa .sub{margin-top:26px!important}';doc.head.appendChild(st);
+  }
+  btn.addEventListener('click',async function(){
+    if(btn.disabled)return;btn.disabled=true;
+    try{
+      lbl.textContent='Preparando…';
+      if(!window.html2canvas)await load('html2canvas.min.js');
+      if(!window.jspdf)await load('jspdf.umd.min.js');
+      if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+      var secs=[].slice.call(document.querySelectorAll('body > header.capa, body > section'));
+      var swaps=[];
+      await Promise.all([].map.call(document.querySelectorAll('video'),function(v){
+        var i=new Image();i.src=v.getAttribute('poster')||'';i.className='pdf-poster';
+        i.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0';
+        var par=v.parentNode;if(getComputedStyle(par).position==='static')par.style.position='relative';
+        par.insertBefore(i,v);swaps.push(i);return i.decode?i.decode().catch(function(){}):null;}));
+      var W=1280,pdf=null;
+      for(var i=0;i<secs.length;i++){
+        lbl.textContent='Gerando '+(i+1)+'/'+secs.length;
+        var idx=i;
+        var c=await html2canvas(secs[i],{scale:1.5,useCORS:true,backgroundColor:'#F4F2F7',windowWidth:W,logging:false,
+          onclone:function(doc){prep(doc)}});
+        var w=c.width,h=c.height,img=c.toDataURL('image/jpeg',0.86);
+        var pw=W*0.75,ph=pw*h/w;
+        if(!pdf){pdf=new window.jspdf.jsPDF({orientation:ph>pw?'p':'l',unit:'pt',format:[pw,ph],compress:true})}
+        else{pdf.addPage([pw,ph],ph>pw?'p':'l')}
+        pdf.addImage(img,'JPEG',0,0,pw,ph,undefined,'FAST');
+      }
+      swaps.forEach(function(i){i.remove()});
+      lbl.textContent='Salvando…';
+      pdf.save('Portfolio-Gabi-e-Manu.pdf');
+      lbl.textContent='PDF pronto';
+    }catch(e){console.error(e);lbl.textContent='Erro, tente de novo'}
+    setTimeout(function(){lbl.textContent='Baixar PDF';btn.disabled=false},2500);
+  });
 })();
 </script>
 
