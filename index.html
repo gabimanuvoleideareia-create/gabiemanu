@@ -48,6 +48,7 @@ section{position:relative}
 .anim [data-a="img"].in img,.anim [data-a="img"].in video{transform:scale(1)}
 .split .ch{display:inline-block;opacity:0;transform:translateY(60%);filter:blur(6px);transition:transform 1s cubic-bezier(.2,.8,.2,1),opacity .8s ease,filter .8s ease;transition-delay:calc(var(--i)*45ms + .15s)}
 .split .ln{display:inline-block;vertical-align:bottom;padding:.06em .1em .2em;margin:-.06em -.03em -.2em}
+#saq .ch,#vj .ch{transition-duration:.55s,.45s,.45s;transition-delay:calc(var(--i)*22ms)}
 .split.in .ch{transform:none;opacity:1;filter:none}
 @keyframes drift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 @keyframes floaty{0%,100%{transform:translateY(0) rotate(var(--rot,0deg))}50%{transform:translateY(-10px) rotate(var(--rot,0deg))}}
@@ -231,7 +232,8 @@ section{position:relative}
 .icard:hover img{transform:scale(1.05)}
 .icard .cap{position:absolute;inset:auto 0 0 0;padding:16px;background:linear-gradient(transparent,rgba(14,12,20,.85));display:grid;gap:4px}
 .icard .cap b{font-size:15px;font-weight:600;letter-spacing:-.02em}
-@media (max-width:1000px){.igrid{grid-template-columns:1fr 1fr}}
+@media (max-width:1000px){
+  .events{grid-template-columns:1fr}.igrid{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.icard .cap{padding:10px}.icard .cap .lbl{display:none}.icard .cap b{font-size:13px;line-height:1.2}.icard .cap{background:linear-gradient(transparent,rgba(14,12,20,.92) 55%)}}
 .mrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
 .mrow a{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border-radius:30px;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:600}
@@ -244,7 +246,13 @@ section{position:relative}
 .br .panel::before{content:"";position:absolute;left:-20%;bottom:-60%;width:90%;height:130%;background:radial-gradient(closest-side,rgba(228,168,200,.35),transparent);pointer-events:none}
 .br .panel::after{content:"";position:absolute;right:-10%;top:-50%;width:70%;height:120%;background:radial-gradient(closest-side,rgba(123,108,180,.5),transparent);pointer-events:none}
 .br .big{position:relative;z-index:1;font-weight:700;letter-spacing:-.075em;line-height:.8;font-size:clamp(56px,12.5vw,200px);white-space:nowrap}
-.br .grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--g);margin-top:40px}
+.events{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
+.evt{display:grid;gap:8px;padding:18px 22px;border-radius:18px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05)}
+.evt.hot{background:linear-gradient(135deg,rgba(185,140,198,.3),rgba(91,95,176,.3))}
+.evt .lbl{color:#E4C7EE}
+.evt b{font-size:clamp(20px,2vw,26px);font-weight:600;letter-spacing:-.03em;line-height:1.15}
+.br li{align-items:flex-start;gap:14px}
+.br .grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:var(--g);margin-top:40px}
 .br p{color:rgba(255,255,255,.72);font-size:14px}
 .br ul{list-style:none}
 .br li{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.18);font-size:14px;font-weight:500}
@@ -279,6 +287,16 @@ section{position:relative}
 .cota .dest{font-size:13.5px;line-height:1.5;padding:12px 14px;border-radius:14px;background:rgba(123,108,180,.12);margin-bottom:18px}
 .cota.top .dest{background:rgba(255,255,255,.1)}
 .cota ul{font-size:13.5px!important}
+.cota .per{margin-bottom:20px}
+.dest-box{margin-top:40px;padding:clamp(24px,3.5vw,44px);border-radius:28px;background:rgba(255,255,255,.72);backdrop-filter:blur(6px);display:grid;gap:26px}
+.dest-head h3{font-size:clamp(28px,3vw,40px);font-weight:600;letter-spacing:-.04em;margin:8px 0 12px}
+.dest-head p,.dest-foot p{font-size:15px;line-height:1.6;color:#3E3850;max-width:860px}
+.dest-head .lbl{color:var(--violet)}
+.dest-list{list-style:none;counter-reset:d;display:grid;grid-template-columns:1fr 1fr;gap:10px 28px}
+.dest-list li{counter-increment:d;display:flex;gap:14px;align-items:flex-start;font-size:14.5px;line-height:1.5;padding:12px 0;border-top:1px solid var(--line)}
+.dest-list li::before{content:counter(d,decimal-leading-zero);flex:none;font-weight:600;font-size:13px;color:var(--violet);padding-top:1px;font-variant-numeric:tabular-nums}
+.dest-foot{display:grid;gap:12px}
+@media (max-width:760px){.dest-list{grid-template-columns:1fr}}
 .cnote{margin-top:22px;font-size:14px;color:#3E3850;max-width:760px}
 .ask{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:40px;padding:26px 30px;border-radius:26px;background:rgba(255,255,255,.55)}
 .ask p{font-size:17px;font-weight:500;letter-spacing:-.02em;max-width:520px}
@@ -359,7 +377,6 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
   .br .big{font-size:14.5vw}
   .pgrid .wide{grid-column:1/-1}
 }
-
 /* ---------- botão PDF ---------- */
 .pdf-btn{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:90;display:inline-flex;align-items:center;gap:8px;padding:13px 18px;border:0;border-radius:40px;background:var(--ink);color:#fff;font:600 13px/1 var(--f);box-shadow:0 12px 30px -10px rgba(0,0,0,.55);cursor:pointer}
 .pdf-btn svg{width:16px;height:16px}
@@ -388,7 +405,7 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
     <div class="top">
       <div data-a><span class="tick"></span><p>Nº 1 de Minas Gerais.<br>Rumo ao Brasileiro Sub-17.</p></div>
       <div class="logo-wrap"><h1 class="logo split" id="logo">Gabi <span class="amp gt">&amp;</span> Manu</h1><p class="sub lbl" data-a style="--d:.9s">Vôlei de praia · Sete Lagoas, MG · Portfolio 2026</p></div>
-      <div class="r" data-a style="--d:.2s"><span class="tick"></span><p>Arena MVP ·<br>Associação Transformar</p></div>
+      <div class="r"></div>
     </div>
 
     <div class="panel" data-a style="--d:.4s">
@@ -396,7 +413,7 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
       <div class="txt" data-a style="--d:.9s"><span class="tick"></span><h3 class="h3">Sobre a dupla</h3><p>Gabi, 14 anos, e Manu, 13, são de Sete Lagoas e chegaram ao topo do vôlei de praia mineiro ainda na base.</p></div>
       <div class="stage">
         <div class="ph float"><img class="cover" src="fotos/capa-dupla.jpg" alt="Gabi e Manu na areia com uniforme amarelo e bola de jogo"></div>
-        <div class="vd float"><video class="cover" src="videos/hero.mp4" poster="videos/hero.jpg" autoplay muted loop playsinline></video><span class="chip"><i></i>Em jogo</span></div>
+        <div class="vd float"><video class="cover" src="capa-video.mp4" poster="capa-video.jpg" autoplay muted loop playsinline></video><span class="chip"><i></i>Em jogo</span></div>
       </div>
       <div class="txt r" data-a style="--d:1.05s"><span class="tick"></span><h3 class="h3">A temporada</h3><p>Campeãs do Circuito Mineiro Sub-15 e da Seletiva Mineira Sub-17. Agora representam Minas Gerais em Saquarema.</p></div>
     </div>
@@ -465,7 +482,7 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
       <li class="vt-item"><span class="vt-dot"></span>
         <div class="vt-card"><div class="vt-pos">1º</div><div class="vt-when">26 e 27 set · Sete Lagoas</div><h3>JESEL 2026 · Vôlei de Quadra</h3><p>Gabi campeã pelo Colégio Elite Master, módulo II.</p></div></li>
       <li class="vt-item next"><span class="vt-dot"></span>
-        <div class="vt-card"><div class="vt-pos">Próximo</div><div class="vt-when">21 e 22 nov · local a definir</div><h3>Estadual Sub-17</h3><p>A dupla campeã leva o título de nº 1 de Minas Gerais.</p></div></li>
+        <div class="vt-card"><div class="vt-pos">Próximo</div><div class="vt-when">28 e 29 nov · Local a definir</div><h3>Campeonato Mineiro Sub-17</h3><p>As setelagoanas Gabi e Manu entram em quadra em busca do título mineiro da categoria Sub-17 e do lugar mais alto do pódio em Minas Gerais.</p></div></li>
       <li class="vt-item next"><span class="vt-dot"></span>
         <div class="vt-card"><div class="vt-pos">Próximo</div><div class="vt-when">10 a 13 dez · Saquarema/RJ</div><h3>Brasileiro Sub-17</h3><p>Minas Gerais no principal palco do vôlei de praia de base do país.</p></div></li>
     </ol>
@@ -533,16 +550,19 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
   </div>
 </section>
 
-<!-- 07 SAQUAREMA -->
-<section class="br">
+<!-- 07 PRÓXIMOS DESAFIOS -->
+<section class="br" id="desafios">
   <div class="wrap">
     <div class="panel" data-a>
-      <div class="lbl" style="position:relative;z-index:1;opacity:.6">Próximo desafio · Campeonato Brasileiro Sub-17</div>
+      <div class="lbl" style="position:relative;z-index:1;opacity:.6">Próximos desafios · 2026</div>
       <div class="big gt split" id="saq">Saquarema</div>
+      <div class="events">
+        <div class="evt"><span class="lbl">28 e 29 nov · Local a definir</span><b>Campeonato Mineiro Sub-17</b></div>
+        <div class="evt hot"><span class="lbl">10 a 13 dez · Saquarema/RJ</span><b>Campeonato Brasileiro Sub-17</b></div>
+      </div>
       <div class="grid">
-        <p>Com 13 e 14 anos, Gabi e Manu vão representar Minas Gerais como dupla nº 1 em uma categoria Sub-17, contra atletas até três anos mais velhas.</p>
-        <ul><li>Transporte até o RJ<span>01</span></li><li>Hospedagem e alimentação<span>02</span></li></ul>
-        <ul><li>Inscrição e taxas<span>03</span></li><li>Uniformes e material<span>04</span></li></ul>
+        <ul><li>Preparação esportiva da dupla<span>01</span></li><li>Transporte, alimentação e taxas de inscrição em torneios municipais, estaduais e nacionais<span>02</span></li></ul>
+        <ul><li>Uniformes e bonificações para as atletas<span>03</span></li><li>Equipe técnica e profissionais de marketing e nutrição esportiva<span>04</span></li></ul>
       </div>
     </div>
   </div>
@@ -551,15 +571,14 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
 <!-- 08 ESTRUTURA -->
 <section class="est">
   <div class="wrap grid">
-    <div class="ph" data-a="img"><img class="cover" src="fotos/circuito-tecnico.jpg" alt="Gabi e Manu no pódio com o técnico Leandro Pires"></div>
+    <div class="ph" data-a="img"><img class="cover" src="estrutura.jpg" alt="Gabi e Manu no pódio da Copa Regional Sudeste com a equipe técnica" style="object-position:50% 25%"></div>
     <div>
       <h2 class="h2" data-a>Estrutura</h2>
-      <p class="body" data-a>As atletas integram o Projeto de Treinamento de Alto Rendimento da Associação Transformar, na Arena MVP. Em paralelo, treinam vôlei de quadra na turma Sub-17 da Escola Mari Cassemiro.</p>
+      <p class="body" data-a>As atletas integram o Projeto de Treinamento de Alto Rendimento da Associação Transformar, na Arena MVP.</p>
       <div class="team">
         <div data-a><b>Leandro Pires</b><span class="lbl">Treinador · Coordenação</span></div>
         <div data-a style="--d:.08s"><b>Marcos Alexandre Neves</b><span class="lbl">Preparação física</span></div>
         <div data-a style="--d:.16s"><b>Amanda Teixeira</b><span class="lbl">Psicologia do esporte</span></div>
-        <div data-a style="--d:.24s"><b>Escola Mari Cassemiro</b><span class="lbl">Vôlei de quadra · Sub-17</span></div>
       </div>
     </div>
   </div>
@@ -576,19 +595,34 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
     </div>
     <div class="cotas">
       <div class="cota top" data-a><p class="lbl">Patrocinadora principal</p><h3>Master</h3>
-        <p class="val">R$ 2.540<span>/mês</span></p><p class="per">ou R$ 15.240 por 6 meses</p>
-        <p class="dest">Custeia ajuda de custo das atletas e do treinador Leandro, academia, preparador físico e assessoria esportiva e de marketing.</p>
-        <ul><li>Destaque máximo da marca nos uniformes de competição e treino</li><li>Menção como "Patrocinadora Master da dupla Gabi e Manu"</li><li>Destaque nas publicações das atletas, da Arena MVP e da Associação Transformar</li><li>Marca em fotos, vídeos, entrevistas, banners e materiais oficiais</li><li>Visita das atletas à empresa para ação institucional</li><li>Relatório periódico de treinos e competições</li><li>Exclusividade por segmento, se acordada</li></ul></div>
+        <p class="val">R$ 1.900<span>/mês</span></p><p class="per">ou valor único de R$ 7.600 por 4 meses</p>
+        <ul><li>Destaque máximo da marca nos uniformes de competição e de treinamento, conforme disponibilidade de espaço</li><li>Menção institucional como “Patrocinadora Master da dupla Gabi e Manu”</li><li>Destaque nas publicações das atletas e nos conteúdos relacionados à rotina esportiva da dupla</li><li>Agradecimento especial nas redes sociais da dupla Gabi e Manu e da Arena MVP, que alcançam, juntas, mais de 500 mil visualizações mensais</li><li>Inserção da marca em fotos, vídeos, entrevistas, banners e materiais oficiais de divulgação</li><li>Divulgação da empresa em registros fotográficos e audiovisuais da rotina esportiva da dupla</li><li>Associação da marca ao incentivo ao esporte, à formação de jovens atletas e à representação de Sete Lagoas em competições regionais e nacionais</li><li>Possibilidade de visita das atletas à empresa para ações institucionais, mediante agendamento</li><li>Relatórios mensais com registros de treinos, competições e principais atividades</li><li>Possibilidade de exclusividade por segmento de atuação, mediante acordo prévio</li></ul></div>
       <div class="cota" data-a style="--d:.1s"><p class="lbl">Patrocinadora</p><h3>Ouro</h3>
-        <p class="val">R$ 1.270<span>/mês</span></p><p class="per">ou R$ 7.620 por 6 meses</p>
-        <p class="dest">Custeia competições (transporte, alimentação e inscrições), uniformes, nutricionista, psicóloga, preparação física e treinos na Arena MVP.</p>
-        <ul><li>Logomarca nos materiais de divulgação do projeto</li><li>Menções periódicas como "Patrocinadora Ouro"</li><li>Marca em publicações selecionadas e em conteúdos de treinos, viagens e competições</li><li>Atletas usando ou apresentando produtos e serviços da empresa, quando adequado</li><li>Certificado de participação como empresa apoiadora</li></ul></div>
+        <p class="val">R$ 950<span>/mês</span></p><p class="per">ou valor único de R$ 3.800 por 4 meses</p>
+        <ul><li>Logomarca nos materiais oficiais de divulgação do projeto</li><li>Menções como “Patrocinadora Ouro da dupla Gabi e Manu”</li><li>Marca em publicações selecionadas e conteúdos de treinos, viagens e competições</li><li>Agradecimento especial nas redes sociais da dupla Gabi e Manu e da Arena MVP, que alcançam, juntas, mais de 500 mil visualizações mensais</li><li>Divulgação da empresa em registros fotográficos e audiovisuais da rotina esportiva da dupla</li><li>Possibilidade de as atletas utilizarem ou apresentarem produtos e serviços da empresa em conteúdos institucionais, quando adequado e previamente alinhado</li><li>Associação da marca ao incentivo ao esporte, à formação de jovens atletas e à representação de Sete Lagoas em competições municipais, regionais e nacionais</li></ul></div>
       <div class="cota" data-a style="--d:.2s"><p class="lbl">Empresa apoiadora</p><h3>Prata</h3>
-        <p class="val">R$ 635<span>/mês</span></p><p class="per">ou R$ 3.810 por 6 meses</p>
-        <p class="dest">Apoio acessível para empresas locais e profissionais liberais, direcionado a despesas específicas de treino e competição.</p>
-        <ul><li>Logomarca em materiais coletivos de divulgação</li><li>Menção como "Empresa Apoiadora · Cota Prata"</li><li>Agradecimento nas redes sociais</li><li>Nome na relação de apoiadores</li><li>Certificado de apoio à dupla</li></ul></div>
+        <p class="val">R$ 400<span>/mês</span></p><p class="per">ou valor único de R$ 1.600 por 4 meses</p>
+        <ul><li>Logomarca em materiais coletivos de divulgação do projeto</li><li>Menção como “Empresa Apoiadora”</li><li>Agradecimento especial nas redes sociais da dupla Gabi e Manu e da Arena MVP, que alcançam, juntas, mais de 500 mil visualizações mensais</li><li>Nome da empresa na relação oficial de apoiadores</li><li>Possibilidade de divulgação da marca em publicações relacionadas à rotina de treinos e competições</li></ul></div>
     </div>
-    <p class="cnote" data-a>Também aceitamos apoio em produtos ou serviços (academia, nutrição, transporte, material esportivo) e apoio pontual para a viagem ao Brasileiro Sub-17.</p>
+    <p class="cnote" data-a>O apoio por meio de permuta de produtos, prestação de serviços, materiais esportivos e outras contribuições será muito bem-vindo e ajudará diretamente no desenvolvimento esportivo de Gabi e Manu.</p>
+    <div class="dest-box" data-a>
+      <div class="dest-head"><span class="lbl">Transparência</span><h3>Destinação dos recursos</h3>
+        <p>Os valores arrecadados com o patrocínio serão destinados diretamente à preparação, ao desenvolvimento esportivo e à participação das atletas Gabi e Manu em treinamentos e competições de vôlei de praia.</p></div>
+      <ol class="dest-list">
+        <li>Manutenção da equipe técnica, incluindo treinadores, preparador físico, assessoria esportiva e acompanhamento psicológico</li>
+        <li>Ajuda de custo para as atletas e para os profissionais que as acompanham durante os campeonatos</li>
+        <li>Treinamentos de alta performance, com preparação física e acompanhamento nutricional</li>
+        <li>Treinamentos específicos de vôlei de praia na Arena MVP</li>
+        <li>Transporte, hospedagem, alimentação e taxas de inscrição em competições municipais, estaduais e nacionais</li>
+        <li>Uniformes de jogo e de treinamento, roupas para viagens, acessórios e materiais esportivos</li>
+        <li>Suplementação e demais recursos necessários à preparação física das atletas</li>
+        <li>Apoio à participação da dupla em competições importantes, incluindo o Campeonato Brasileiro Sub-17</li>
+      </ol>
+      <div class="dest-foot">
+        <p>O patrocínio contribuirá diretamente para que Gabi e Manu mantenham uma rotina contínua de treinamentos e avancem em sua evolução esportiva. Além de proporcionar melhores condições de preparação, o apoio ajudará a reduzir os custos relacionados à prática do vôlei de praia, permitindo que as atletas participem de competições regionais, estaduais e nacionais e representem Sete Lagoas com dedicação, segurança e competitividade.</p>
+        <p>A aplicação dos recursos será realizada de forma responsável e vinculada às necessidades esportivas da dupla. Sempre que possível, serão apresentados registros das atividades, treinos, viagens e competições realizadas, permitindo ao patrocinador acompanhar os resultados do apoio oferecido.</p>
+      </div>
+    </div>
     <div class="ask" data-a>
       <p>Quer apoiar Gabi e Manu? Fale com a gente e escolha a cota ideal para a sua empresa.</p>
       <a class="btn-ink" href="https://wa.me/5531999187076?text=Ol%C3%A1!%20Vi%20o%20portfolio%20da%20Gabi%20e%20Manu%20e%20quero%20conversar%20sobre%20uma%20parceria." target="_blank" rel="noopener">Quero conversar sobre uma parceria</a>
@@ -605,8 +639,8 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
       <figure data-a><img src="galeria/g50.jpg" alt="Gabi e Manu · Câmara de Sete Lagoas" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
       <figure data-a><img src="galeria/g43.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
       <figure data-a><img src="galeria/g10.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
-      <figure data-a><img src="galeria/g40.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
       <figure data-a><img src="galeria/g23.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
+      <figure data-a><img src="fotos/circuito-tecnico.jpg" alt="Gabi e Manu no pódio do Circuito Mineiro com o técnico Leandro Pires" width="1200" height="1600" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
       <figure data-a><img src="galeria/g35.jpg" alt="Gabi e Manu · Circuito AVP Mineiro" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Circuito AVP Mineiro</figcaption></figure>
       <figure data-a><img src="galeria/g20.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
       <figure data-a><img src="galeria/g38.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
@@ -675,7 +709,7 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
       </div>
       <div class="contacts">Humberto · +55 31 99918-7076</div>
     </div>
-    <footer class="lbl"><span>Gabi &amp; Manu · Portfolio 2026</span><span>Sete Lagoas — MG</span><span>Arena MVP · Associação Transformar</span></footer>
+    <footer class="lbl"><span>Gabi &amp; Manu · Portfolio 2026</span><span>Sete Lagoas — MG</span></footer>
   </div>
 </section>
 
@@ -697,7 +731,9 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
   root.classList.add('anim');
   function count(el){var n=+el.dataset.count,p=+(el.dataset.pad||0),t0=null;function f(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/1200);var v=Math.round(n*(1-Math.pow(1-k,3)));el.textContent=String(v).padStart(p,'0');if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add('in');t.querySelectorAll&&t.querySelectorAll('[data-count]').forEach(count);io.unobserve(t)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
-  document.querySelectorAll('[data-a],.split').forEach(function(el){io.observe(el)});
+  document.querySelectorAll('[data-a]').forEach(function(el){io.observe(el)});
+  var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io2.unobserve(e.target)}})},{rootMargin:'0px 0px 15% 0px'});
+  document.querySelectorAll('.split').forEach(function(el){io2.observe(el)});
   requestAnimationFrame(function(){document.getElementById('logo').classList.add('in')});
   // segurança: nada fica escondido se o observador falhar
   setTimeout(function(){document.querySelectorAll('[data-a],.split').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)el.classList.add('in')})},1500);
@@ -753,9 +789,10 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
   // galeria: "ver mais" no celular
   (function(){var g=document.getElementById('gal'),bt=document.getElementById('galMore');if(!g||!bt)return;
     bt.addEventListener('click',function(){var o=g.classList.toggle('open');bt.setAttribute('aria-expanded',o);bt.innerHTML=o?'Ver menos fotos':'Ver todas as fotos <span>58</span>';
-      if(o)g.querySelectorAll('figure').forEach(function(f){f.classList.add('in')});else g.scrollIntoView({block:'start'})});})();
+      if(o)g.querySelectorAll('figure').forEach(function(f){f.classList.add('in');f.style.opacity='1';f.style.transform='none';var im=f.querySelector('img');if(im)im.loading='eager'});else g.scrollIntoView({block:'start'})});})();
 })();
 </script>
+
 <button class="pdf-btn" id="pdfBtn" type="button" aria-label="Baixar o portfolio em PDF"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg><span>Baixar PDF</span></button>
 <script>
 (function(){
