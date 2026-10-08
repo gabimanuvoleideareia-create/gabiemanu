@@ -226,6 +226,8 @@ section{position:relative}
 .mcard .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .mcard:hover .thumb img{transform:scale(1.05)}
 .mcard.has-img{gap:18px}
+.mcard .thumb.pod{background:#fff}
+.mcard .thumb.pod img{object-fit:contain;object-position:50% 50%}
 .igrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
 .icard{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:var(--ink);color:#fff;max-width:100%}
 .icard img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
@@ -233,7 +235,7 @@ section{position:relative}
 .icard .cap{position:absolute;inset:auto 0 0 0;padding:16px;background:linear-gradient(transparent,rgba(14,12,20,.85));display:grid;gap:4px}
 .icard .cap b{font-size:15px;font-weight:600;letter-spacing:-.02em}
 @media (max-width:1000px){
-  .events{grid-template-columns:1fr}.igrid{grid-template-columns:1fr 1fr}}
+  .events{grid-template-columns:1fr 1fr}.igrid{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.icard .cap{padding:10px}.icard .cap .lbl{display:none}.icard .cap b{font-size:13px;line-height:1.2}.icard .cap{background:linear-gradient(transparent,rgba(14,12,20,.92) 55%)}}
 .mrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
 .mrow a{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border-radius:30px;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:600}
@@ -246,7 +248,7 @@ section{position:relative}
 .br .panel::before{content:"";position:absolute;left:-20%;bottom:-60%;width:90%;height:130%;background:radial-gradient(closest-side,rgba(228,168,200,.35),transparent);pointer-events:none}
 .br .panel::after{content:"";position:absolute;right:-10%;top:-50%;width:70%;height:120%;background:radial-gradient(closest-side,rgba(123,108,180,.5),transparent);pointer-events:none}
 .br .big{position:relative;z-index:1;font-weight:700;letter-spacing:-.075em;line-height:.8;font-size:clamp(56px,12.5vw,200px);white-space:nowrap}
-.events{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
+.events{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
 .evt{display:grid;gap:8px;padding:18px 22px;border-radius:18px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05)}
 .evt.hot{background:linear-gradient(135deg,rgba(185,140,198,.3),rgba(91,95,176,.3))}
 .evt .lbl{color:#E4C7EE}
@@ -363,6 +365,7 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
   .br .grid,.why,.cotas{grid-template-columns:1fr}
 }
 @media (max-width:560px){
+  .events{grid-template-columns:1fr}
   .capa .sub{white-space:normal;line-height:1.6}
   .capa .top .r{color:var(--ink)}
   .capa{padding-block:84px 40px}
@@ -412,7 +415,7 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
       <div class="ghosts" id="ghosts" aria-hidden="true"></div>
       <div class="txt" data-a style="--d:.9s"><span class="tick"></span><h3 class="h3">Sobre a dupla</h3><p>Gabi, 14 anos, e Manu, 13, são de Sete Lagoas e chegaram ao topo do vôlei de praia mineiro ainda na base.</p></div>
       <div class="stage">
-        <div class="ph float"><img class="cover" src="fotos/capa-dupla.jpg" alt="Gabi e Manu na areia com uniforme amarelo e bola de jogo"></div>
+        <div class="ph float"><img class="cover" src="capa-nova.jpg" alt="Gabi e Manu batendo as mãos na areia, de uniforme amarelo" style="object-position:50% 30%"></div>
         <div class="vd float"><video class="cover" src="capa-video.mp4" poster="capa-video.jpg" autoplay muted loop playsinline></video><span class="chip"><i></i>Em jogo</span></div>
       </div>
       <div class="txt r" data-a style="--d:1.05s"><span class="tick"></span><h3 class="h3">A temporada</h3><p>Campeãs do Circuito Mineiro Sub-15 e da Seletiva Mineira Sub-17. Agora representam Minas Gerais em Saquarema.</p></div>
@@ -423,7 +426,7 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
 <!-- 02 FUNDAMENTOS + ATLETAS -->
 <section class="fund" id="dupla">
   <div class="wrap grid">
-    <div class="card" data-a="img"><img class="cover" src="fotos/dupla-hero.jpg" alt="Gabi e Manu na areia do Circuito Mineiro" style="object-position:50% 12%"><div class="over lbl"><span>Circuito Mineiro</span><span>Abr 2026</span></div></div>
+    <div class="card" data-a="img"><img class="cover" src="quem-sao.jpg" alt="Gabi e Manu abraçadas na quadra de areia da Arena MVP" style="object-position:50% 25%"></div>
     <div>
       <h2 class="h2" data-a>Quem são</h2>
       <div class="cols">
@@ -474,7 +477,7 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
       <li class="vt-item"><span class="vt-dot"></span>
         <div class="vt-card"><div class="vt-pos">★</div><div class="vt-when">26 mai</div><h3>Câmara de Sete Lagoas</h3><p>Moção de congratulação às atletas e ao técnico Leandro Pires.</p></div></li>
       <li class="vt-item"><span class="vt-dot"></span>
-        <div class="vt-card"><div class="vt-pos">1º · 2º</div><div class="vt-when">13 e 14 jun · Sete Lagoas</div><h3>JESEL 2026 · Vôlei de Areia</h3><p>Manu campeã pelo Colégio Regina Pais e Gabi vice pelo Colégio Elite Master, módulo II.</p></div></li>
+        <div class="vt-card"><div class="vt-pos">1º · 2º</div><div class="vt-when">13 e 14 jun · Sete Lagoas</div><h3>JESEL 2026 · Vôlei de Areia</h3><p>Manu, campeã pelo Colégio Regina Pais, e Gabi, vice-campeã pelo Colégio Elite Master, módulo II.</p></div></li>
       <li class="vt-item"><span class="vt-dot"></span>
         <div class="vt-card"><div class="vt-pos">1º · 4º</div><div class="vt-when">Sete Lagoas/MG</div><h3>8º MVP Open · Adulto</h3><p>Campeãs no Adulto Iniciante e 4º lugar no Adulto Open, contra duplas adultas.</p></div></li>
       <li class="vt-item"><span class="vt-dot"></span>
@@ -482,7 +485,11 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
       <li class="vt-item"><span class="vt-dot"></span>
         <div class="vt-card"><div class="vt-pos">1º</div><div class="vt-when">26 e 27 set · Sete Lagoas</div><h3>JESEL 2026 · Vôlei de Quadra</h3><p>Gabi campeã pelo Colégio Elite Master, módulo II.</p></div></li>
       <li class="vt-item next"><span class="vt-dot"></span>
-        <div class="vt-card"><div class="vt-pos">Próximo</div><div class="vt-when">28 e 29 nov · Local a definir</div><h3>Campeonato Mineiro Sub-17</h3><p>As setelagoanas Gabi e Manu entram em quadra em busca do título mineiro da categoria Sub-17 e do lugar mais alto do pódio em Minas Gerais.</p></div></li>
+        <div class="vt-card"><div class="vt-pos">Próximo</div><div class="vt-when">17 e 18 out · Betim/MG</div><h3>Circuito Mineiro Sub-21</h3><p>Gabi e Manu aceitaram o desafio de disputar o campeonato Sub-21, enfrentando duplas adultas em uma importante oportunidade de aprendizado, experiência e evolução no vôlei de praia.</p></div></li>
+      <li class="vt-item next"><span class="vt-dot"></span>
+        <div class="vt-card"><div class="vt-pos">Próximo</div><div class="vt-when">14 e 15 nov · Betim/MG</div><h3>Etapas estaduais Sub-15 e Sub-17</h3><p>Gabi e Manu estarão em Betim para disputar as etapas estaduais das categorias Sub-15 e Sub-17. A dupla segue firme em sua trajetória, enfrentando novos desafios, adquirindo experiência e buscando excelentes resultados para representar Sete Lagoas no vôlei de praia mineiro.</p></div></li>
+      <li class="vt-item next"><span class="vt-dot"></span>
+        <div class="vt-card"><div class="vt-pos">Próximo</div><div class="vt-when">5 e 6 dez · Betim/MG</div><h3>Circuito Mineiro Sub-17</h3><p>A dupla vencedora do campeonato estadual Sub-17 levará o título de nº 1 de Minas.</p></div></li>
       <li class="vt-item next"><span class="vt-dot"></span>
         <div class="vt-card"><div class="vt-pos">Próximo</div><div class="vt-when">10 a 13 dez · Saquarema/RJ</div><h3>Brasileiro Sub-17</h3><p>Minas Gerais no principal palco do vôlei de praia de base do país.</p></div></li>
     </ol>
@@ -498,7 +505,7 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
         <div class="vc" tabindex="0" data-a style="--d:.05s"><video src="videos/jogo-1.mp4" poster="videos/jogo-1.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">Em jogo · 01</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
         <div class="vc" tabindex="0" data-a style="--d:.15s"><video src="videos/jogo-2.mp4" poster="videos/jogo-2.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">Em jogo · 02</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
         <div class="vc" tabindex="0" data-a style="--d:.25s"><video src="videos/jogo-3.mp4" poster="videos/jogo-3.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">Em jogo · 03</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
-        <div class="vc" tabindex="0" data-a style="--d:.35s"><video src="videos/jogo-4.mp4" poster="videos/jogo-4.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">Em jogo · 04</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
+        <div class="vc" tabindex="0" data-a style="--d:.35s"><video src="jogo-5.mp4" poster="jogo-5.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">Em jogo · 04</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
       </div>
     </div>
   </div>
@@ -510,7 +517,7 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
     <div class="intro"><h2 class="h2" data-a>Premiações</h2><p data-a style="--d:.1s">Os momentos no pódio da temporada 2026, do Circuito Mineiro à homenagem na Câmara Municipal de Sete Lagoas.</p></div>
     <div class="pgrid">
       <div class="vc" tabindex="0" data-a><video src="videos/podio-circuito.mp4" poster="videos/podio-circuito.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">Circuito Mineiro · 1º</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
-      <div class="vc" tabindex="0" data-a style="--d:.1s"><video src="videos/premio-circuito-2.mp4" poster="videos/premio-circuito-2.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">Circuito Mineiro · pódio</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
+      <div class="vc" tabindex="0" data-a style="--d:.1s"><video src="premio-2025.mp4" poster="premio-2025.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">1º campeonato juntas · 18 mai 2025</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
       <div class="vc" tabindex="0" data-a style="--d:.2s"><video src="videos/premio-copa.mp4" poster="videos/premio-copa.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">Copa Regional · 3º</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
       <div class="vc" tabindex="0" data-a style="--d:.3s"><video src="videos/podio-mvp-open.mp4" poster="videos/podio-mvp-open.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">8º MVP Open · 1º</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
       <div class="vc wide" tabindex="0" data-a><video src="videos/premio-camara-tv.mp4" poster="videos/premio-camara-tv.jpg" playsinline preload="none"></video><div class="ov"><span class="lbl">TV Câmara · Reunião Ordinária 26/05</span><span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
@@ -534,9 +541,10 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
         <div class="src lbl"><span>Megacidade</span><span>15 abr 2026</span></div>
         <h3>Atletas da Arena MVP de Sete Lagoas conquistam o título mineiro de vôlei de praia Sub-15</h3>
         <span class="go">Ler matéria</span></a>
-      <a class="mcard" data-a style="--d:.2s" href="https://open.spotify.com/episode/35hOMfcuWbRXaiOxEvmGzo" target="_blank" rel="noopener">
-        <div class="src lbl"><span>Câmara de Sete Lagoas · Podcast</span><span>24 set 2026</span></div>
-        <h3>Giro Esportivo: a dupla no podcast de esportes da Câmara Municipal</h3>
+      <a class="mcard has-img" data-a style="--d:.2s" href="https://open.spotify.com/episode/4SrhkqXMIhw73k5dDbFk6H" target="_blank" rel="noopener">
+        <div class="thumb pod"><img src="podcast-giro.jpg" alt="Capa do episódio Giro Esportivo com Gabi e Manu" loading="lazy"></div>
+        <div class="src lbl"><span>Rádio e Spotify · Câmara de Sete Lagoas</span><span>07 out 2026</span></div>
+        <h3>Giro Esportivo: Gabriela e Manuela, jogadoras de vôlei de praia Sub-17</h3>
         <span class="go">Ouvir no Spotify</span></a>
     </div>
     <div class="igrid">
@@ -557,12 +565,14 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
       <div class="lbl" style="position:relative;z-index:1;opacity:.6">Próximos desafios · 2026</div>
       <div class="big gt split" id="saq">Saquarema</div>
       <div class="events">
-        <div class="evt"><span class="lbl">28 e 29 nov · Local a definir</span><b>Campeonato Mineiro Sub-17</b></div>
-        <div class="evt hot"><span class="lbl">10 a 13 dez · Saquarema/RJ</span><b>Campeonato Brasileiro Sub-17</b></div>
+        <div class="evt"><span class="lbl">17 e 18 out · Betim/MG</span><b>Circuito Mineiro Sub-21</b></div>
+        <div class="evt"><span class="lbl">14 e 15 nov · Betim/MG</span><b>Etapas estaduais Sub-15 e Sub-17</b></div>
+        <div class="evt"><span class="lbl">5 e 6 dez · Betim/MG</span><b>Circuito Mineiro Sub-17</b></div>
+        <div class="evt hot"><span class="lbl">10 a 13 dez · Saquarema/RJ</span><b>Campeonato Brasileiro de Vôlei de Praia Sub-17</b></div>
       </div>
       <div class="grid">
         <ul><li>Preparação esportiva da dupla<span>01</span></li><li>Transporte, alimentação e taxas de inscrição em torneios municipais, estaduais e nacionais<span>02</span></li></ul>
-        <ul><li>Uniformes e bonificações para as atletas<span>03</span></li><li>Equipe técnica e profissionais de marketing e nutrição esportiva<span>04</span></li></ul>
+        <ul><li>Uniformes e materiais esportivos<span>03</span></li><li>Equipe técnica e profissionais de marketing e nutrição esportiva<span>04</span></li></ul>
       </div>
     </div>
   </div>
@@ -596,13 +606,13 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
     <div class="cotas">
       <div class="cota top" data-a><p class="lbl">Patrocinadora principal</p><h3>Master</h3>
         <p class="val">R$ 1.900<span>/mês</span></p><p class="per">ou valor único de R$ 7.600 por 4 meses</p>
-        <ul><li>Destaque máximo da marca nos uniformes de competição e de treinamento, conforme disponibilidade de espaço</li><li>Menção institucional como “Patrocinadora Master da dupla Gabi e Manu”</li><li>Destaque nas publicações das atletas e nos conteúdos relacionados à rotina esportiva da dupla</li><li>Agradecimento especial nas redes sociais da dupla Gabi e Manu e da Arena MVP, que alcançam, juntas, mais de 500 mil visualizações mensais</li><li>Inserção da marca em fotos, vídeos, entrevistas, banners e materiais oficiais de divulgação</li><li>Divulgação da empresa em registros fotográficos e audiovisuais da rotina esportiva da dupla</li><li>Associação da marca ao incentivo ao esporte, à formação de jovens atletas e à representação de Sete Lagoas em competições regionais e nacionais</li><li>Possibilidade de visita das atletas à empresa para ações institucionais, mediante agendamento</li><li>Relatórios mensais com registros de treinos, competições e principais atividades</li><li>Possibilidade de exclusividade por segmento de atuação, mediante acordo prévio</li></ul></div>
+        <ul><li>Destaque máximo da marca nos uniformes de competição e de treinamento</li><li>Menção institucional como “Patrocinadora Master da dupla Gabi e Manu”</li><li>Destaque nas publicações das atletas e nos conteúdos relacionados à rotina esportiva da dupla</li><li>Agradecimento especial nas redes sociais da Arena MVP, que alcança cerca de 350 mil visualizações mensais, e das atletas Gabi e Manu</li><li>Inserção da marca em fotos, vídeos, entrevistas, banners e materiais oficiais de divulgação</li><li>Divulgação da empresa em registros fotográficos e audiovisuais da rotina esportiva da dupla</li><li>Associação da marca ao incentivo ao esporte, à formação de jovens atletas e à representação de Sete Lagoas em competições regionais e nacionais</li><li>Possibilidade de visita das atletas à empresa para ações institucionais, mediante agendamento</li><li>Recebimento de relatórios mensais com registros de treinos, competições e principais atividades realizadas</li><li>Possibilidade de exclusividade por segmento de atuação, mediante acordo prévio entre as partes</li></ul></div>
       <div class="cota" data-a style="--d:.1s"><p class="lbl">Patrocinadora</p><h3>Ouro</h3>
         <p class="val">R$ 950<span>/mês</span></p><p class="per">ou valor único de R$ 3.800 por 4 meses</p>
-        <ul><li>Logomarca nos materiais oficiais de divulgação do projeto</li><li>Menções como “Patrocinadora Ouro da dupla Gabi e Manu”</li><li>Marca em publicações selecionadas e conteúdos de treinos, viagens e competições</li><li>Agradecimento especial nas redes sociais da dupla Gabi e Manu e da Arena MVP, que alcançam, juntas, mais de 500 mil visualizações mensais</li><li>Divulgação da empresa em registros fotográficos e audiovisuais da rotina esportiva da dupla</li><li>Possibilidade de as atletas utilizarem ou apresentarem produtos e serviços da empresa em conteúdos institucionais, quando adequado e previamente alinhado</li><li>Associação da marca ao incentivo ao esporte, à formação de jovens atletas e à representação de Sete Lagoas em competições municipais, regionais e nacionais</li></ul></div>
+        <ul><li>Inclusão da logomarca nos uniformes e materiais oficiais de divulgação do projeto</li><li>Menções como “Patrocinadora Ouro da dupla Gabi e Manu”</li><li>Inserção da marca em publicações selecionadas e conteúdos relacionados a treinos, viagens e competições</li><li>Agradecimento especial nas redes sociais da Arena MVP, que alcança cerca de 350 mil visualizações mensais, e das atletas Gabi e Manu</li><li>Divulgação da empresa em registros fotográficos e audiovisuais da rotina esportiva da dupla</li><li>Possibilidade de as atletas utilizarem ou apresentarem produtos e serviços da empresa em conteúdos institucionais, quando adequado e previamente alinhado</li><li>Associação da marca ao incentivo ao esporte, à formação de jovens atletas e à representação de Sete Lagoas em competições municipais, regionais e nacionais</li></ul></div>
       <div class="cota" data-a style="--d:.2s"><p class="lbl">Empresa apoiadora</p><h3>Prata</h3>
         <p class="val">R$ 400<span>/mês</span></p><p class="per">ou valor único de R$ 1.600 por 4 meses</p>
-        <ul><li>Logomarca em materiais coletivos de divulgação do projeto</li><li>Menção como “Empresa Apoiadora”</li><li>Agradecimento especial nas redes sociais da dupla Gabi e Manu e da Arena MVP, que alcançam, juntas, mais de 500 mil visualizações mensais</li><li>Nome da empresa na relação oficial de apoiadores</li><li>Possibilidade de divulgação da marca em publicações relacionadas à rotina de treinos e competições</li></ul></div>
+        <ul><li>Inclusão da logomarca em materiais coletivos de divulgação do projeto</li><li>Menção como “Empresa Apoiadora”</li><li>Agradecimento especial nas redes sociais da Arena MVP, que alcança cerca de 350 mil visualizações mensais, e das atletas Gabi e Manu</li><li>Inclusão do nome da empresa na relação oficial de apoiadores</li><li>Possibilidade de divulgação da marca em publicações relacionadas à rotina de treinos e competições</li></ul></div>
     </div>
     <p class="cnote" data-a>O apoio por meio de permuta de produtos, prestação de serviços, materiais esportivos e outras contribuições será muito bem-vindo e ajudará diretamente no desenvolvimento esportivo de Gabi e Manu.</p>
     <div class="dest-box" data-a>
@@ -635,66 +645,68 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
   <div class="wrap">
     <h2 class="h2" data-a>Galeria</h2>
     <div class="gal" id="gal">
-      <figure data-a><img src="galeria/g37.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
-      <figure data-a><img src="galeria/g50.jpg" alt="Gabi e Manu · Câmara de Sete Lagoas" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
-      <figure data-a><img src="galeria/g43.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
-      <figure data-a><img src="galeria/g10.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
-      <figure data-a><img src="galeria/g23.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
-      <figure data-a><img src="fotos/circuito-tecnico.jpg" alt="Gabi e Manu no pódio do Circuito Mineiro com o técnico Leandro Pires" width="1200" height="1600" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
-      <figure data-a><img src="galeria/g35.jpg" alt="Gabi e Manu · Circuito AVP Mineiro" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Circuito AVP Mineiro</figcaption></figure>
-      <figure data-a><img src="galeria/g20.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
-      <figure data-a><img src="galeria/g38.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
-      <figure data-a><img src="galeria/g48.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
-      <figure data-a><img src="galeria/g09.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
-      <figure data-a><img src="galeria/g01.jpg" alt="Gabi e Manu · Vôlei de quadra" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Vôlei de quadra</figcaption></figure>
-      <figure data-a><img src="galeria/g02.jpg" alt="Gabi e Manu · Vôlei de quadra" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Vôlei de quadra</figcaption></figure>
-      <figure data-a><img src="galeria/g03.jpg" alt="Gabi e Manu · Vôlei de quadra" width="1400" height="1050" loading="lazy" decoding="async"><figcaption>Vôlei de quadra</figcaption></figure>
-      <figure data-a><img src="galeria/g04.jpg" alt="Gabi e Manu · Vôlei de quadra" width="1400" height="1050" loading="lazy" decoding="async"><figcaption>Vôlei de quadra</figcaption></figure>
-      <figure data-a><img src="galeria/g05.jpg" alt="Gabi e Manu · Circuito AVP Mineiro" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Circuito AVP Mineiro</figcaption></figure>
-      <figure data-a><img src="galeria/g06.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
-      <figure data-a><img src="galeria/g07.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
-      <figure data-a><img src="galeria/g08.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
-      <figure data-a><img src="galeria/g11.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
-      <figure data-a><img src="galeria/g12.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
-      <figure data-a><img src="galeria/g13.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
-      <figure data-a><img src="galeria/g14.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
-      <figure data-a><img src="galeria/g15.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="1400" height="788" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
-      <figure data-a><img src="galeria/g16.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
-      <figure data-a><img src="galeria/g17.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="1400" height="788" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
-      <figure data-a><img src="galeria/g18.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
-      <figure data-a><img src="galeria/g19.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
-      <figure data-a><img src="galeria/g21.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="1400" height="788" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
-      <figure data-a><img src="galeria/g22.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="788" height="1400" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
-      <figure data-a><img src="galeria/g24.jpg" alt="Gabi e Manu" width="646" height="1400" loading="lazy" decoding="async"></figure>
-      <figure data-a><img src="galeria/g25.jpg" alt="Gabi e Manu" width="825" height="1400" loading="lazy" decoding="async"></figure>
-      <figure data-a><img src="galeria/g26.jpg" alt="Gabi e Manu" width="646" height="1400" loading="lazy" decoding="async"></figure>
-      <figure data-a><img src="galeria/g27.jpg" alt="Gabi e Manu · 2022 · Início" width="738" height="972" loading="lazy" decoding="async"><figcaption>2022 · Início</figcaption></figure>
-      <figure data-a><img src="galeria/g28.jpg" alt="Gabi e Manu" width="1050" height="1400" loading="lazy" decoding="async"></figure>
-      <figure data-a><img src="galeria/g29.jpg" alt="Gabi e Manu" width="630" height="1400" loading="lazy" decoding="async"></figure>
-      <figure data-a><img src="galeria/g30.jpg" alt="Gabi e Manu" width="646" height="1400" loading="lazy" decoding="async"></figure>
-      <figure data-a><img src="galeria/g31.jpg" alt="Gabi e Manu · Vôlei de quadra" width="1400" height="1050" loading="lazy" decoding="async"><figcaption>Vôlei de quadra</figcaption></figure>
-      <figure data-a><img src="galeria/g32.jpg" alt="Gabi e Manu · Circuito AVP Mineiro" width="787" height="1400" loading="lazy" decoding="async"><figcaption>Circuito AVP Mineiro</figcaption></figure>
-      <figure data-a><img src="galeria/g33.jpg" alt="Gabi e Manu · Circuito AVP Mineiro" width="1400" height="1050" loading="lazy" decoding="async"><figcaption>Circuito AVP Mineiro</figcaption></figure>
-      <figure data-a><img src="galeria/g34.jpg" alt="Gabi e Manu · Circuito AVP Mineiro" width="1400" height="1050" loading="lazy" decoding="async"><figcaption>Circuito AVP Mineiro</figcaption></figure>
-      <figure data-a><img src="galeria/g36.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
-      <figure data-a><img src="galeria/g39.jpg" alt="Gabi e Manu · Circuito Mineiro · 1º" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Circuito Mineiro · 1º</figcaption></figure>
-      <figure data-a><img src="galeria/g41.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
-      <figure data-a><img src="galeria/g42.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
-      <figure data-a><img src="galeria/g44.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
-      <figure data-a><img src="galeria/g45.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
-      <figure data-a><img src="galeria/g46.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
-      <figure data-a><img src="galeria/g47.jpg" alt="Gabi e Manu · Copa Regional Sudeste" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Copa Regional Sudeste</figcaption></figure>
-      <figure data-a><img src="galeria/g49.jpg" alt="Gabi e Manu · Câmara de Sete Lagoas" width="960" height="1280" loading="lazy" decoding="async"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
-      <figure data-a><img src="galeria/g51.jpg" alt="Gabi e Manu · Câmara de Sete Lagoas" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
-      <figure data-a><img src="galeria/g52.jpg" alt="Gabi e Manu · Câmara de Sete Lagoas" width="720" height="1280" loading="lazy" decoding="async"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
-      <figure data-a><img src="galeria/g53.jpg" alt="Gabi e Manu · Câmara de Sete Lagoas" width="720" height="1280" loading="lazy" decoding="async"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
-      <figure data-a><img src="galeria/g54.jpg" alt="Gabi e Manu · Câmara de Sete Lagoas" width="1280" height="720" loading="lazy" decoding="async"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
-      <figure data-a><img src="galeria/g55.jpg" alt="Gabi e Manu · Câmara de Sete Lagoas" width="720" height="1280" loading="lazy" decoding="async"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
-      <figure data-a><img src="galeria/g56.jpg" alt="Gabi e Manu · Câmara de Sete Lagoas" width="1400" height="788" loading="lazy" decoding="async"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
-      <figure data-a><img src="galeria/g57.jpg" alt="Gabi e Manu · Câmara de Sete Lagoas" width="787" height="1400" loading="lazy" decoding="async"><figcaption>Câmara de Sete Lagoas</figcaption></figure>
-      <figure data-a><img src="galeria/g58.jpg" alt="Gabi e Manu" width="1050" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n01.jpg" alt="Gabi e Manu" width="933" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n02.jpg" alt="Gabi e Manu" width="933" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n03.jpg" alt="Gabi e Manu" width="787" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n04.jpg" alt="Gabi e Manu" width="1400" height="933" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n05.jpg" alt="Gabi e Manu" width="1141" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n06.jpg" alt="Gabi e Manu" width="1280" height="852" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n07.jpg" alt="Gabi e Manu" width="1400" height="1295" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n08.jpg" alt="Gabi e Manu" width="1050" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n09.jpg" alt="Gabi e Manu" width="1050" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n10.jpg" alt="Gabi e Manu" width="1036" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n11.jpg" alt="Gabi e Manu" width="1120" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n12.jpg" alt="Gabi e Manu" width="933" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n13.jpg" alt="Gabi e Manu" width="787" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n14.jpg" alt="Gabi e Manu" width="1400" height="1050" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n15.jpg" alt="Gabi e Manu" width="788" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n16.jpg" alt="Gabi e Manu" width="788" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n17.jpg" alt="Gabi e Manu" width="1400" height="788" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n18.jpg" alt="Gabi e Manu" width="788" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n19.jpg" alt="Gabi e Manu" width="1400" height="1089" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n20.jpg" alt="Gabi e Manu" width="1400" height="1189" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n21.jpg" alt="Gabi e Manu" width="788" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n22.jpg" alt="Gabi e Manu" width="646" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n23.jpg" alt="Gabi e Manu" width="864" height="1152" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n24.jpg" alt="Gabi e Manu" width="1050" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n25.jpg" alt="Gabi e Manu" width="1050" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n26.jpg" alt="Gabi e Manu" width="934" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n27.jpg" alt="Gabi e Manu" width="960" height="1280" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n28.jpg" alt="Gabi e Manu" width="960" height="1280" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n29.jpg" alt="Gabi e Manu" width="960" height="1280" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n30.jpg" alt="Gabi e Manu" width="1050" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n31.jpg" alt="Gabi e Manu" width="1050" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n32.jpg" alt="Gabi e Manu" width="787" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n33.jpg" alt="Gabi e Manu" width="654" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n34.jpg" alt="Gabi e Manu" width="1050" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n35.jpg" alt="Gabi e Manu" width="933" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n36.jpg" alt="Gabi e Manu" width="1051" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n37.jpg" alt="Gabi e Manu" width="787" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n38.jpg" alt="Gabi e Manu" width="787" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n39.jpg" alt="Gabi e Manu" width="933" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n40.jpg" alt="Gabi e Manu" width="933" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n41.jpg" alt="Gabi e Manu" width="1050" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n42.jpg" alt="Gabi e Manu" width="787" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n43.jpg" alt="Gabi e Manu" width="960" height="1280" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n44.jpg" alt="Gabi e Manu" width="720" height="1280" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n45.jpg" alt="Gabi e Manu" width="960" height="1280" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n46.jpg" alt="Gabi e Manu" width="960" height="1280" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n47.jpg" alt="Gabi e Manu" width="1280" height="852" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n48.jpg" alt="Gabi e Manu" width="1280" height="852" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n49.jpg" alt="Gabi e Manu" width="1145" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n50.jpg" alt="Gabi e Manu" width="1050" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n51.jpg" alt="Gabi e Manu" width="787" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n52.jpg" alt="Gabi e Manu" width="933" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n53.jpg" alt="Gabi e Manu" width="1120" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n54.jpg" alt="Gabi e Manu" width="933" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n55.jpg" alt="Gabi e Manu" width="933" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n56.jpg" alt="Gabi e Manu" width="933" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n57.jpg" alt="Gabi e Manu" width="933" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n58.jpg" alt="Gabi e Manu" width="933" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n59.jpg" alt="Gabi e Manu" width="787" height="1400" loading="lazy" decoding="async"></figure>
+      <figure data-a><img src="galeria2/n60.jpg" alt="Gabi e Manu" width="787" height="1400" loading="lazy" decoding="async"></figure>
     </div>
-    <button class="gal-more" id="galMore" type="button" aria-expanded="false" aria-controls="gal">Ver todas as fotos <span>58</span></button>
+    <button class="gal-more" id="galMore" type="button" aria-expanded="false" aria-controls="gal">Ver todas as fotos <span>60</span></button>
   </div>
 </section>
 
@@ -788,7 +800,7 @@ footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin
 
   // galeria: "ver mais" no celular
   (function(){var g=document.getElementById('gal'),bt=document.getElementById('galMore');if(!g||!bt)return;
-    bt.addEventListener('click',function(){var o=g.classList.toggle('open');bt.setAttribute('aria-expanded',o);bt.innerHTML=o?'Ver menos fotos':'Ver todas as fotos <span>58</span>';
+    bt.addEventListener('click',function(){var o=g.classList.toggle('open');bt.setAttribute('aria-expanded',o);bt.innerHTML=o?'Ver menos fotos':'Ver todas as fotos <span>60</span>';
       if(o)g.querySelectorAll('figure').forEach(function(f){f.classList.add('in');f.style.opacity='1';f.style.transform='none';var im=f.querySelector('img');if(im)im.loading='eager'});else g.scrollIntoView({block:'start'})});})();
 })();
 </script>
